@@ -27,7 +27,6 @@ body {font-family:Montserrat-SemiBold, Montserrat-Medium, Montserrat-Regular, Mo
     background-color:#FFE3E3;
 	width: 80%;
 	min-width:1500px;
-	min-height:1500px;
 
 }
 #nav {
@@ -178,15 +177,24 @@ footer {
 	position: static;
 	text-align: left;
 }
-.submitbutton{
-	font-family: Montserrat;
-	font-style: normal;
+#content input[type=text],input[type=email],textarea{
+	font-family: Montserrat-Regular;
+	font-style: inherit;
+	font-size: 16px;
+	line-height: 30px;	
+}	
+#content input[type=text]:focus,input[type=email]:focus,textarea:focus {
+  border: 3px solid #555;
+}
+#content input[type=submit],input[type=reset]{
+	font-family: inherit;
+	font-style: inherit;
 	font-weight: 550;
-	font-size: 20px;
+	font-size: 18px;
 	line-height: 28px;
 	text-align: center;
 	color: #FFFFFF;
 	background-color: #292121;
 	width:230px;
-	height:60px;
+	height:50px;
 }
