@@ -26,11 +26,8 @@
 body {font-family:Montserrat-SemiBold, Montserrat-Medium, Montserrat-Regular, Montserrat-Bold, Montserrat-Black, Montserrat-ExtraBold;
     background-color:#FFE3E3;
 	width: 100%;
-  margin: 0px auto;
-  align-items:center;
-	min-width:800px;
-  /* max-width: 100%; */
-  overflow-x: hidden;
+	min-width:1500px;
+	margin: 0px;
 }
 #nav {
   font-family:Montserrat-SemiBold;
@@ -80,10 +77,7 @@ body {font-family:Montserrat-SemiBold, Montserrat-Medium, Montserrat-Regular, Mo
 
 footer {
   position: relative;
-  left: 0%;
-  bottom: 0%;
-  width: 100%;
-  height: 300px;
+  height: 250px;
   background-color: #292121;
   color: white;
   text-align: center;
@@ -94,20 +88,16 @@ footer {
   left: 25%;
   width: 170px;
   height: 170px;
-  border-radius: 50%;
-  overflow: hidden;
-  margin-top: 30%;
+  /*border-radius: 50%;*/
+  margin-top: 20%;
 }
 
 .contact {
   position: relative;
-  /* display: inline-block; */
   left: 28%;
-  /* width: 60%; */
+  width: 40%;
   height: 200px;
-  margin-top: 1.5%;
-  
-  /* bottom: 40%; */
+  padding-top: 1%;
 }
 
 .contact #contact-title {
@@ -126,7 +116,6 @@ footer {
   width: 20px;
   height: 20px;
   border-radius: 50%; 
-  overflow: hidden;
 }
 
 .contact ul {
@@ -146,27 +135,15 @@ footer {
 
 .contact #copyright {
   position: relative;
-  top: 35%;
-  right: 35%;
-  /* left: -10%; */
+  top: 20%;
+  left: -10%;
   font-family: Montserrat-Regular;
   font-size: 11px;
   text-align: center;
   color: white;
 }
-/* End footer styling. */
-
-.banner {
-  background-color: white;
-  position: relative;
-  width: 100%;
-  height: 300px;
-  margin: 0px;
-}
-
-
 #headingtext {
-	font-family: Montserrat-ExtraBold;
+	font-family: Montserrat;
 	font-style: normal;
 	color: #000000;
 	font-weight: 800;
@@ -175,13 +152,12 @@ footer {
 	position:relative;
 }
 #headingtext p {
-  font-family: Montserrat-Medium;
 	font-weight: 600;
 	font-size: 25px;
 	line-height: 30px;
 }
 #content {
-	font-family: Montserrat-SemiBold;
+	font-family: Montserrat;
 	font-style: normal;
 	font-weight: 600;
 	font-size: 20px;
