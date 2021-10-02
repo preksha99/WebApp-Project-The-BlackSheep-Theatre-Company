@@ -25,9 +25,12 @@
 
 body {font-family:Montserrat-SemiBold, Montserrat-Medium, Montserrat-Regular, Montserrat-Bold, Montserrat-Black, Montserrat-ExtraBold;
     background-color:#FFE3E3;
-	width: 80%;
-	min-width:1500px;
-
+	width: 100%;
+  margin: 0px auto;
+  align-items:center;
+	min-width:800px;
+  /* max-width: 100%; */
+  overflow-x: hidden;
 }
 #nav {
   font-family:Montserrat-SemiBold;
@@ -76,9 +79,9 @@ body {font-family:Montserrat-SemiBold, Montserrat-Medium, Montserrat-Regular, Mo
   /* End navigation bar styling. */
 
 footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
+  position: relative;
+  left: 0%;
+  bottom: 0%;
   width: 100%;
   height: 300px;
   background-color: #292121;
@@ -163,7 +166,7 @@ footer {
 
 
 #headingtext {
-	font-family: Montserrat;
+	font-family: Montserrat-ExtraBold;
 	font-style: normal;
 	color: #000000;
 	font-weight: 800;
@@ -172,12 +175,13 @@ footer {
 	position:relative;
 }
 #headingtext p {
+  font-family: Montserrat-Medium;
 	font-weight: 600;
 	font-size: 25px;
 	line-height: 30px;
 }
 #content {
-	font-family: Montserrat;
+	font-family: Montserrat-SemiBold;
 	font-style: normal;
 	font-weight: 600;
 	font-size: 20px;
