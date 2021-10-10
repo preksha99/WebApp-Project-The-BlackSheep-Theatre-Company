@@ -120,7 +120,7 @@ unset ($_POST["buy"]);
 			</div>
 			<?php
 			$date = date('Y-m-d H:i:s');
-			$query = "SELECT * FROM schedule WHERE schedule.datetime >= '".$date."' and showid=1";
+			$query = "SELECT * FROM schedule WHERE schedule.datetime >= '".$date."' and showid=2";
 			$result = $db->query($query);
 			$num_results = $result->num_rows;
 			while($row=mysqli_fetch_assoc($result)) {
