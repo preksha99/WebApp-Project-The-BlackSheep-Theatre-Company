@@ -3,8 +3,42 @@
     <head>
         <title>The BlackSheep Theatre Company</title>
         <link rel="stylesheet" href="style.css">
-        <script type = "text/javascript"  src = "js/slideshow.js" ></script>
         <meta charset="utf-8">
+        <style>
+          .mySlides {display: none;}
+          .slideshow-container {
+  /* max-width: 1000px; */
+  position: relative;
+  margin: auto;
+}
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+        </style>
     </head>
     <body>
             <nav>
@@ -57,7 +91,7 @@
               UPCOMING SHOWS
               
               <div class="slideshow-container fade">
-                <div class="Containers">
+                <div class="mySlides fade">
                   <table>
                     <tr>
                       <td><img src="images/cats.png" width=275px height=483px align="center"></td>
@@ -66,7 +100,46 @@
                     </tr>
                   </table>
                 </div>
+                <div class="mySlides fade">
+                  <table>
+                    <tr>
+                      <td><img src="images/rent.png" width=275px height=483px align="center"></td>
+                      <td><img src="images/chorusline.png" width=275px height=483px align="center"></td>
+                      <td><img src="images/myfairlady.png" width=275px height=483px align="center"></td>
+                    </tr>
+                  </table>
+                </div>
               </div>
+              <br>
+
+<div style="text-align:center">
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+</div>
+
+<script>
+  var slideIndex = 0;
+  showSlides();
+  
+  function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}    
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+    setTimeout(showSlides, 2000); // Change image every 2 seconds
+  }
+  </script>
+
             </div>
             <footer>
                 <a style="float:left" href="#">
