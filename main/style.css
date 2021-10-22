@@ -26,11 +26,8 @@
 body {font-family:Montserrat-SemiBold, Montserrat-Medium, Montserrat-Regular, Montserrat-Bold, Montserrat-Black, Montserrat-ExtraBold;
     background-color:#FFE3E3;
 	width: 100%;
-  margin: 0px auto;
-  align-items:center;
-	/* min-width:1300px; */
-  /* max-width: 100%; */
-  overflow-x: hidden;
+	min-width: screen;
+	margin: 0px;
 }
 #nav {
   font-family:Montserrat-SemiBold;
@@ -80,10 +77,7 @@ body {font-family:Montserrat-SemiBold, Montserrat-Medium, Montserrat-Regular, Mo
 
 footer {
   position: relative;
-  left: 0%;
-  bottom: 0%;
-  width: 100%;
-  height: 300px;
+  height: 250px;
   background-color: #292121;
   color: white;
   text-align: center;
@@ -94,20 +88,16 @@ footer {
   left: 25%;
   width: 170px;
   height: 170px;
-  border-radius: 50%;
-  overflow: hidden;
-  margin-top: 30%;
+  /*border-radius: 50%;*/
+  margin-top: 20%;
 }
 
 .contact {
   position: relative;
-  /* display: inline-block; */
   left: 28%;
-  /* width: 60%; */
+  width: 40%;
   height: 200px;
-  margin-top: 1.5%;
-  
-  /* bottom: 40%; */
+  padding-top: 1%;
 }
 
 .contact #contact-title {
@@ -126,7 +116,6 @@ footer {
   width: 20px;
   height: 20px;
   border-radius: 50%; 
-  overflow: hidden;
 }
 
 .contact ul {
@@ -146,25 +135,13 @@ footer {
 
 .contact #copyright {
   position: relative;
-  top: 35%;
-  right: 35%;
-  /* left: -10%; */
+  top: 20%;
+  left: -10%;
   font-family: Montserrat-Regular;
   font-size: 11px;
   text-align: center;
   color: white;
 }
-/* End footer styling. */
-
-.banner {
-  background-color: white;
-  position: relative;
-  width: 100%;
-  height: 300px;
-  margin: 0px;
-}
-
-
 #headingtext {
 	font-family: Montserrat-ExtraBold;
 	font-style: normal;
@@ -175,7 +152,7 @@ footer {
 	position:relative;
 }
 #headingtext p {
-  font-family: Montserrat-Medium;
+	font-family: Montserrat-Medium;
 	font-weight: 600;
 	font-size: 25px;
 	line-height: 30px;
@@ -187,8 +164,24 @@ footer {
 	font-size: 20px;
 	line-height: 24px;
 }
-#content img{
-	margin-left: 250px;
+#content table {
+	width: 1400px; 
+	margin-top: 150px; 
+	margin-left: auto;
+	margin-right:auto;
+	padding-left:50px;  
+	margin-bottom:80px;
+}
+#content table td {
+	text-align:center;
+}
+#content a:link, a:visited {
+	text-decoration: none;
+	color: #000000;
+}
+#content a:hover, a:active {
+	text-decoration: underline;
+	color:#555;
 }
 #content form{
 	position: static;
@@ -215,3 +208,107 @@ footer {
 	width:230px;
 	height:50px;
 }
+
+.banner {
+  background-color: white;
+  /* width: screen; */
+  height: 390px;
+  /* padding-top: 40px; */
+}
+
+.banner .logo-image {
+  position: relative;
+  left: 1050px;
+  top: 30px;
+  width: 340px;
+  height: 340px;
+}
+
+.banner .logo-image img {
+  width: 100%;
+  height: auto;
+}
+
+.banner .quote {
+  position: relative;
+  left: 150px;
+  bottom: 200px;
+  font-family: Montserrat-Regular;
+  font-style: italic;
+  font-size: 23px;
+  text-align: center;
+  width: 600px;
+  height: 100px;
+}
+
+.banner .quote #author {
+  font-family: Montserrat-Medium;
+  font-style: normal;
+  font-weight: bold;
+}
+
+.plays {
+  width: screen;
+  height: 850px;
+  font-family: Montserrat-ExtraBold;
+	font-style: normal;
+  font-size: 50px;
+  text-align: center;
+}
+
+.plays table {
+  align-items: center;
+  width: 1400px; 
+  border-spacing: 0 80px;
+	margin-top: 10px; 
+	margin-left: auto;
+	margin-right:auto;
+	/* padding-left:50px;   */
+	margin-bottom:80px;
+}
+
+.upcoming {
+  background-color: #D691A0;
+  height: 800px;
+  font-family: Montserrat-ExtraBold;
+	font-style: normal;
+  font-size: 50px;
+  text-align: center;
+  
+}
+
+.upcoming table {
+  align-items: center;
+  width: 1400px; 
+  border-spacing: 0 80px;
+	margin-top: 10px; 
+	margin-left: auto;
+	margin-right:auto;
+	/* padding-left:50px;   */
+	margin-bottom:80px;
+}
+
+.slideshow-container {
+  /* max-width: 1000px; */
+  position: relative;
+  margin: auto;
+}
+
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.4s;
+  animation-name: fade;
+  animation-duration: 1.4s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .5}
+  to {opacity: 2}
+}
+
+@keyframes fade {
+  from {opacity: .5}
+  to {opacity: 2}
+}
+
