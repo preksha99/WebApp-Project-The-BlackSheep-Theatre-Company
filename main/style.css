@@ -26,7 +26,7 @@
 body {font-family:Montserrat-SemiBold, Montserrat-Medium, Montserrat-Regular, Montserrat-Bold, Montserrat-Black, Montserrat-ExtraBold;
     background-color:#FFE3E3;
 	width: 100%;
-	min-width: screen;
+	min-width: 1500px;
 	margin: 0px;
 }
 #nav {
