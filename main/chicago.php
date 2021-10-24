@@ -20,60 +20,65 @@ if (isset($_POST["buy"])) {
 	$itemArray = array("showid"=>$_POST["showid"], "scheduleid"=>$_POST["scheduleid"], "quantity_area1"=>$_POST['quantity_area1'], 
 	"quantity_area2"=>$_POST['quantity_area2'], "quantity_area3"=>$_POST['quantity_area3'], "quantity_area4"=>$_POST['quantity_area4']);
 	
-	if(!empty($_SESSION["cart_item"])) {
-		echo "  Not empty";
-		for ($j=0; $j<count($_SESSION["cart_item"]); $j++) {
-			echo "  Inside loop".$j;
-			
-			if (($_SESSION["cart_item"][$j]["scheduleid"]==$itemArray["scheduleid"]) and ($_SESSION["cart_item"][$j]["showid"]==$itemArray["showid"])) {
-				if (($_SESSION["cart_item"][$j]["quantity_area1"] + $itemArray["quantity_area1"]) > 10) {
-					$itemArray["quantity_area1"] = 0
-				?><script type="text/javascript">alert("You can only book a maximum of 10 tickets of Area 1 per show per transaction.Remaining tickets have been added/exist in cart.");</script>
-				<?php }
-				else {$_SESSION["cart_item"][$j]["quantity_area1"] = $_SESSION["cart_item"][$j]["quantity_area1"] + $itemArray["quantity_area1"];}
+	if (($_POST['quantity_area1']==0)&&($_POST['quantity_area2']==0)&&($_POST['quantity_area3']==0)&&($_POST['quantity_area4']==0)) {
+		$all_zero = true;
+	}
+	else {$all_zero=false;}
+	
+	if (!$all_zero) {
+		if(!empty($_SESSION["cart_item"])) {
+			for ($j=0; $j<count($_SESSION["cart_item"]); $j++) {
 				
-				if (($_SESSION["cart_item"][$j]["quantity_area2"] + $itemArray["quantity_area2"]) > 10) {
-					$itemArray["quantity_area2"] = 0
-				?><script type="text/javascript">alert("You can only book a maximum of 10 tickets of Area 2 per show per transaction. Remaining tickets have been added/exist in cart.");</script>
-				<?php }
-				else {$_SESSION["cart_item"][$j]["quantity_area2"] = $_SESSION["cart_item"][$j]["quantity_area2"] + $itemArray["quantity_area2"];}
-				
-				if (($_SESSION["cart_item"][$j]["quantity_area3"] + $itemArray["quantity_area3"]) > 10) {
-					$itemArray["quantity_area3"] = 0
-				?><script type="text/javascript">alert("You can only book a maximum of 10 tickets of Area 3 per show per transaction. Remaining tickets have been added/exist in cart.");</script>
-				<?php }
-				else {$_SESSION["cart_item"][$j]["quantity_area3"] = $_SESSION["cart_item"][$j]["quantity_area3"] + $itemArray["quantity_area3"];}
+				if (($_SESSION["cart_item"][$j]["scheduleid"]==$itemArray["scheduleid"]) and ($_SESSION["cart_item"][$j]["showid"]==$itemArray["showid"])) {
+					if (($_SESSION["cart_item"][$j]["quantity_area1"] + $itemArray["quantity_area1"]) > 10) {
+						$itemArray["quantity_area1"] = 0
+					?><script type="text/javascript">alert("You can only book a maximum of 10 tickets of Area 1 per show per transaction.Remaining tickets have been added/exist in cart.");</script>
+					<?php }
+					else {$_SESSION["cart_item"][$j]["quantity_area1"] = $_SESSION["cart_item"][$j]["quantity_area1"] + $itemArray["quantity_area1"];}
 					
-				if (($_SESSION["cart_item"][$j]["quantity_area4"] + $itemArray["quantity_area4"]) > 10) {
-					$itemArray["quantity_area4"] = 0
-				?><script type="text/javascript">alert("You can only book a maximum of 10 tickets of Area 4 per show per transaction. Remaining tickets have been added/exist in cart.");</script>
-				<?php }
-				else {$_SESSION["cart_item"][$j]["quantity_area4"] = $_SESSION["cart_item"][$j]["quantity_area4"] + $itemArray["quantity_area4"];}
-				
-				$match = 1;
-				break;
-			} 
-			else {
-				unset ($match);
-				continue;
-			}	
+					if (($_SESSION["cart_item"][$j]["quantity_area2"] + $itemArray["quantity_area2"]) > 10) {
+						$itemArray["quantity_area2"] = 0
+					?><script type="text/javascript">alert("You can only book a maximum of 10 tickets of Area 2 per show per transaction. Remaining tickets have been added/exist in cart.");</script>
+					<?php }
+					else {$_SESSION["cart_item"][$j]["quantity_area2"] = $_SESSION["cart_item"][$j]["quantity_area2"] + $itemArray["quantity_area2"];}
+					
+					if (($_SESSION["cart_item"][$j]["quantity_area3"] + $itemArray["quantity_area3"]) > 10) {
+						$itemArray["quantity_area3"] = 0
+					?><script type="text/javascript">alert("You can only book a maximum of 10 tickets of Area 3 per show per transaction. Remaining tickets have been added/exist in cart.");</script>
+					<?php }
+					else {$_SESSION["cart_item"][$j]["quantity_area3"] = $_SESSION["cart_item"][$j]["quantity_area3"] + $itemArray["quantity_area3"];}
+						
+					if (($_SESSION["cart_item"][$j]["quantity_area4"] + $itemArray["quantity_area4"]) > 10) {
+						$itemArray["quantity_area4"] = 0
+					?><script type="text/javascript">alert("You can only book a maximum of 10 tickets of Area 4 per show per transaction. Remaining tickets have been added/exist in cart.");</script>
+					<?php }
+					else {$_SESSION["cart_item"][$j]["quantity_area4"] = $_SESSION["cart_item"][$j]["quantity_area4"] + $itemArray["quantity_area4"];}
+					
+					$match = 1;
+					break;
+				} 
+				else {
+					unset ($match);
+					continue;
+				}	
+			}
+			if (!isset($match)) {
+				array_push($_SESSION["cart_item"],$itemArray);
+				?><script type="text/javascript">alert("Tickets have been added to cart");</script>
+				<?php
+			}
 		}
-		if (!isset($match)) {
+		else {
 			array_push($_SESSION["cart_item"],$itemArray);
 			?><script type="text/javascript">alert("Tickets have been added to cart");</script>
 			<?php
 		}
 	}
-	else {
-		array_push($_SESSION["cart_item"],$itemArray);
-		?><script type="text/javascript">alert("Tickets have been added to cart");</script>
-		<?php
-	}
 	echo '<pre>'.print_r($_SESSION, TRUE).'</pre>';
 
-	$update_query = "UPDATE schedule SET quantity_area1 = quantity_area1-".$itemArray["quantity_area1"].", quantity_area2 = quantity_area2-".$itemArray["quantity_area2"].", 
-	quantity_area3 = quantity_area3-".$itemArray["quantity_area3"].", quantity_area4= quantity_area4-".$itemArray["quantity_area4"]." WHERE showid=".$_POST["showid"]. " and scheduleid=".$_POST["scheduleid"].";";
-	$update_result = $db->query($update_query);
+	#$update_query = "UPDATE schedule SET quantity_area1 = quantity_area1-".$itemArray["quantity_area1"].", quantity_area2 = quantity_area2-".$itemArray["quantity_area2"].", 
+	#quantity_area3 = quantity_area3-".$itemArray["quantity_area3"].", quantity_area4= quantity_area4-".$itemArray["quantity_area4"]." WHERE showid=".$_POST["showid"]. " and scheduleid=".$_POST["scheduleid"].";";
+	#$update_result = $db->query($update_query);
 
 	
 	$retrieval_query = "SELECT * FROM schedule WHERE showid=".$_POST["showid"]. " and scheduleid=".$_POST["scheduleid"];
@@ -83,9 +88,6 @@ if (isset($_POST["buy"])) {
 	
 }
 unset ($_POST["buy"]);
-
-#$timezone = date_default_timezone_get();
-#echo "The current server timezone is: " .$timezone;
 ?>
 <html lang="en">
     <head>
