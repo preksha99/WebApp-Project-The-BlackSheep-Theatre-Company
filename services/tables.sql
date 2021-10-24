@@ -1,3 +1,10 @@
+create table shows
+( showid int unsigned not null auto_increment primary key,
+  name char(50) not null,
+  status char(30) not null,
+  images char(30) not null
+);
+
 create table bookings
 ( bookingid int unsigned not null auto_increment primary key,
   customerid int unsigned not null,
@@ -16,12 +23,6 @@ create table customers
   phone char(30) not null,
   email char(100) not null,
   password char(130) not null
-);
-
-create table shows
-( showid int unsigned not null auto_increment primary key,
-  name char(50) not null,
-  status char(30) not null
 );
 
 create table schedule
