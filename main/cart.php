@@ -11,35 +11,15 @@ if (!isset($_SESSION))  {
 		$_SESSION['cart_item'] = array();
 	}
 	#unset($_SESSION["cart"]);
-	var_dump($_SESSION);
+	#var_dump($_SESSION);
 }
 $date = date('Y-m-d');
-echo $date;
-
-function confirm($confirm_msg){
-	#echo("<script type='text/javascript'> var confirmation = confirm('".$confirm_msg."'); </script>");
-	#$answer = "<script type='text/javascript'>confirmation;</script>";
-	#$answer2 = $answer;
-?>
-<script type="text/javascript">
-var confirmation = confirm("<?php echo $confirm_msg; ?>");
-document.write(confirmation)
-if (confirmation==true) {
-	/*window.location.href='http://192.168.56.2/f32ee/Project_Update/cart.php?confirmed=1';*/
-	document.getElementById("confirmation").submit();
-}
-/*var str_confirmation = "confirmation="+confirmation;
-document.write(str_confirmation);
-document.cookie = str_confirmation;*/
-</script>
-<?php $confirmation = $_GET['confirmed'];
-echo "confirmation =".$confirmation;
-return 0;
-}
-
+$day = date('l');
+#echo $day;
+#echo $dates;
 
 $id = session_id();
-echo "<br>Session id = $id <br>";
+#echo "<br>Session id = $id <br>";
 
 $shows_query = "SELECT * FROM shows";
 $shows_result = $db->query($shows_query);
@@ -55,34 +35,10 @@ $schedule_num = $schedule_result->num_rows;
 while($row=mysqli_fetch_assoc($schedule_result)) {
 				$schedule_set[$row["scheduleid"]] = $row;
 }
-if (isset($_SESSION))  {
-?>
-<script type="text/javascript">
-	/*var set_var = false;*/
-</script>
-<?php
-} ?>
-<script type="text/javascript">
-/*window.addEventListener('beforeunload', function(e) {
-  if(set_var) {
-    //following two lines will cause the browser to ask the user if they
-    //want to leave. The text of this dialog is controlled by the browser.
-    e.preventDefault(); //per the standard
-    e.returnValue = '0'; //required for Chrome
-	var empty_cond = 1;
-  }
-  //else: user is allowed to leave without a warning dialog
-});*/
-</script>
-<?php
+
+
 if (isset($_GET['del'])) {
-	#$_SESSION['cart'][] = $_GET['buy'];
-	#echo $_SESSION['cart'];
 	header('location: ' . $_SERVER['PHP_SELF']. '?' . SID);
-	#$update_query = "UPDATE schedule SET quantity_area1 = quantity_area1+".$_SESSION["cart_item"][$_GET["del"]]["quantity_area1"].", quantity_area2 = quantity_area2+".$_SESSION["cart_item"][$_GET["del"]]["quantity_area2"].", 
-	#quantity_area3 = quantity_area3+".$_SESSION["cart_item"][$_GET["del"]]["quantity_area3"].", quantity_area4= quantity_area4+".$_SESSION["cart_item"][$_GET["del"]]["quantity_area4"]." 
-	#WHERE showid=".$_SESSION["cart_item"][$_GET["del"]]["showid"]. " and scheduleid=".$_SESSION["cart_item"][$_GET["del"]]["scheduleid"].";";
-	#$update_result = $db->query($update_query);
 	if ($_GET["del"] == (count($_SESSION["cart_item"])-1)) {
 		unset ($_SESSION["cart_item"][$_GET["del"]]); 
 	}else {
@@ -98,18 +54,10 @@ unset ($_GET['del']);
 
 if ($_GET['empty']==1) {
 	header('location: ' . $_SERVER['PHP_SELF']. '?' . SID);
-	/*
-	for ($j=0; $j<count($_SESSION["cart_item"]); $j++){ 
-		$showid = $_SESSION["cart_item"][$j]["showid"];
-		$scheduleid = $_SESSION["cart_item"][$j]["scheduleid"];
-		$update_query = "UPDATE schedule SET quantity_area1 = quantity_area1+".$_SESSION["cart_item"][$j]["quantity_area1"].", quantity_area2 = quantity_area2+".$_SESSION["cart_item"][$j]["quantity_area2"].", 
-		quantity_area3 = quantity_area3+".$_SESSION["cart_item"][$j]["quantity_area3"].", quantity_area4= quantity_area4+".$_SESSION["cart_item"][$j]["quantity_area4"]." WHERE showid=".$showid. " and scheduleid=".$scheduleid.";";
-		$update_result = $db->query($update_query);
-	}*/
 	unset ($_SESSION["cart_item"]); 
 }
 unset ($_GET['empty']);
-echo '<pre>'.print_r($_SESSION, TRUE).'</pre>';
+#echo '<pre>'.print_r($_SESSION, TRUE).'</pre>';
 
 if ($_POST["login"]){
 	$password = md5(trim($_POST['old_password']));
@@ -118,11 +66,6 @@ if ($_POST["login"]){
 	$login_query_result = $db->query($login_query);
 	$login_query_num_results = $login_query_result->num_rows;
 	if ($login_query_num_results > 0) {
-		#$confirm_msg = "Thank you for the information! Would you like to proceed with the booking?";
-		#$confirmation = confirm($confirm_msg);
-		#var_dump($confirmation);
-		#var_dump($answer);
-		#echo (strpos($confirmation, "true"));
 		?><script type="text/javascript">alert("Thank you for your details! Your booking is confirmed.\n" + "You will now be redirected to confirmation page!");</script>
 <?php
 		$customer_query = "SELECT customerid FROM customers WHERE email='".trim($_POST['cust_email'])."'";
@@ -140,7 +83,7 @@ if ($_POST["login"]){
 			$order_query_result = $db->query($order_query);
 		}
 
-		?><script type="text/javascript">window.location.href='http://192.168.56.2/f32ee/Project_Update/confirmation.php'; </script>
+		?><script type="text/javascript">window.location.href='http://192.168.56.2/f32ee/Project_Latest/confirmation.php'; </script>
 		<?php
 	} else {
 ?><script type="text/javascript">alert("No account found with the entered email and password!\n" + "Kindly create an account or re-enter password");</script>
@@ -160,9 +103,6 @@ if ($_POST["new_account"]){
 		$new_account_query = "INSERT into customers (name, phone, email, password) values ('".trim($_POST['cust_name'])."', '".trim($_POST['cust_phone'])."', '".trim($_POST['cust_email'])."', '".$password."');";
 		$new_account_query_result = $db->query($new_account_query);
 		if ($new_account_query_result) {
-			#$confirm_msg = "An account has been created using the given information. Would like to proceed with the booking?";
-			#$confirmation = confirm($confirm_msg);
-			#var_dump($confirmation);
 			?><script type="text/javascript">alert("Thank you for your details! An account has been created susing the details. Your booking has been confirmed.\n" + "You will now be redirected to confirmation page!");</script>
 <?php		
 			$customer_query = "SELECT customerid FROM customers WHERE email='".trim($_POST['cust_email'])."'";
@@ -180,144 +120,303 @@ if ($_POST["new_account"]){
 				$order_query_result = $db->query($order_query);
 			}
 			
-			?><script type="text/javascript">window.location.href='http://192.168.56.2/f32ee/Project_Update/confirmation.php'; </script>
+			?><script type="text/javascript">window.location.href='http://192.168.56.2/f32ee/Project_Latest/confirmation.php'; </script>
 			<?php
 		
 		}
 	}
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>The BlackSheep Theatre Company - Cart</title>
+        <title>The BlackSheep Theatre Company</title>
         <link rel="stylesheet" href="style.css">
         <meta charset="utf-8">
+        <style>
+          .cart-header {
+            align-items: center;
+            font-family: Montserrat-ExtraBold;
+            font-size: 45px;
+            text-align: center;
+            text-decoration: none;
+          }
+
+          .cart-card {
+            background-color: white;
+            width: 1300px;
+            height: 170px;
+            margin-left:100px;
+            margin-bottom: 45px;
+          }
+
+          .row {
+            display: flex;
+          }
+          .left{
+                flex: 15%;
+            }
+          .left img {
+            vertical-align: middle;
+            margin-left: 30px;
+            margin-top: 35px;
+          }
+            .middle1 {
+              flex: 35%;
+            }
+
+            .middle1 #heading {
+              font-family: Montserrat-Bold;
+              font-size: 35px;
+              margin-bottom: 15px;
+            }
+
+            .body {
+              font-family: Montserrat-SemiBold;
+              font-size: 17px;
+            }
+            .middle2 {
+              flex: 15%;
+            }
+
+            .middle2 p {
+              margin-top: 50px;
+            }
+
+            .middle2 p #subtotal {
+              font-family: Montserrat-Bold;
+              font-size: 19px;
+            }
+            .right {
+                flex: 20%;
+            }
+
+            .cart-button {
+                margin-left: 55px;
+                margin-top: 60px;
+                background-color: #292121;
+                width:160px;
+                height:40px;
+                font-family: Montserrat-SemiBold;
+                font-style: inherit;
+                text-decoration: none;
+                /* font-weight: 550; */
+                font-size: 15px;
+                /* line-height: 28px; */
+                text-align: center;
+                color: #FFFFFF;
+            }
+
+            .total button {
+              margin-left: 100px;
+              margin-top: -20px;
+              margin-bottom: 40px;
+            }
+
+            .total p {
+              margin-left: 950px;
+              margin-top: -20px;
+              margin-bottom: 40px;
+              font-family: Montserrat-SemiBold;
+              font-size: 24px;
+            }
+            .total p #price-text {
+              font-family: Montserrat-Bold;
+              font-size: 26px;
+            }
+
+            .form {
+              margin-left: 100px;
+              margin-top: 40px;
+            }
+
+            .form input[type=text] {
+              background: transparent;
+              border: none;
+              border-bottom: 1px solid #000000;
+              padding: 2px 5px;
+              margin-bottom: 20px;
+            }
+			.form input[type=password] {
+              background: transparent;
+              border: none;
+              border-bottom: 1px solid #000000;
+              padding: 2px 5px;
+              margin-bottom: 20px;
+            }
+
+            .form input[type=email] {
+              background: transparent;
+              border: none;
+              border-bottom: 1px solid #000000;
+              padding: 2px 5px;
+            }
+
+            .form-button {
+				margin-left: 550px;
+                margin-top: 60px;
+                margin-bottom: 40px;
+                background-color: #292121;
+                width:250px;
+                height:40px;
+                font-family: Montserrat-SemiBold;
+                font-style: inherit;
+                text-decoration: none;
+                /* font-weight: 550; */
+                font-size: 15px;
+                /* line-height: 28px; */
+                text-align: center;
+                color: #FFFFFF;
+            }
+
+            .form p {
+              font-family: Montserrat-Regular;
+              font-size: 15px;
+            }
+        </style>
     </head>
     <body>
-		<script type = "text/javascript"  src = "js/cart_information.js" ></script>
-            <nav>
-                <ul id="nav">
-                    <a style="float:left" href="#">
-                        <div class="logo-image">
-                              <img src="images/logo-image.png">
-                        </div>
-                  </a>
-                    <li><a href="home.html">Home</a>&nbsp;</li>
-				    <li><a href="plays.html">Plays</a>&nbsp;<li>
-				    <li><a href="contact.html">Contact Us</a>&nbsp;</li>
-					<li><a href="login.php">My Bookings</a>&nbsp;</li>
-					<span id="countdown" class="timer"></span>
-					<script>/*
-var seconds = 120;
-function secondPassed() {
-    var minutes = Math.round((seconds - 30)/60);
-    var remainingSeconds = seconds % 60;
-    if (remainingSeconds < 10) {
-        remainingSeconds = "0" + remainingSeconds;  
-    }
-    document.getElementById('countdown').innerHTML = minutes + ":" + remainingSeconds;
-    if (seconds == 0) {
-        clearInterval(countdownTimer);
-        document.getElementById('countdown').innerHTML = "Buzz Buzz";
-    } else {
-        seconds--;
-    }
-}
- 
-var countdownTimer = setInterval('secondPassed()', 1000);*/
-					</script>
-                    <a style="float:right" href="cart.php" class="active">
-                        <div class="cart-image">
-                              <img src="images/cart-image.png">
-                        </div>
-                  </a>
-                </ul>
-            </nav>
-			<div id="content">
-				<?php for ($j=0; $j<count($_SESSION["cart_item"]); $j++){ 
+      <script type = "text/javascript"  src = "js/cart_information.js" ></script>
+        <nav>
+            <ul id="nav">
+                <a style="float:left" href="#">
+                    <div class="logo-image">
+                          <img src="images/logo-image.png">
+                    </div>
+              </a>
+                <li><a href="home.html">Home</a>&nbsp;</li>
+                <li><a href="plays.html">Plays</a>&nbsp;<li>
+                <li><a href="contact.html">Contact Us</a>&nbsp;</li>
+				<li><a href="login.php">My Bookings</a>&nbsp;</li>
+                <a style="float:right" href="cart.php">
+                    <div class="cart-image">
+                          <img src="images/cart-image.png">
+                    </div>
+              </a>
+            </ul>
+        </nav>
+        <div class="cart-header">
+          CART
+        </div>
+        <br><br>
+		<?php if (count($_SESSION['cart_item']) > 0) {
+		?>
+        <div class="cart-items">
+				<?php $total_cost = 0;
+				for ($j=0; $j<count($_SESSION["cart_item"]); $j++){ 
 					$show_name = $shows_set[$_SESSION["cart_item"][$j]["showid"]]["name"];
+					$show_img = $shows_set[$_SESSION["cart_item"][$j]["showid"]]["images"];
 					$show_datetime = DateTime::createFromFormat('Y-m-d H:i:s', $schedule_set[$_SESSION["cart_item"][$j]["scheduleid"]]["datetime"]);
-					$show_date = $show_datetime->format('jS F Y');
+					$show_date = $show_datetime->format('jS F Y , l');
 					$show_time = $show_datetime->format('h:i a');
 					$cart_area1 = $_SESSION["cart_item"][$j]["quantity_area1"];
 					$cart_area2 = $_SESSION["cart_item"][$j]["quantity_area2"];
 					$cart_area3 = $_SESSION["cart_item"][$j]["quantity_area3"];
 					$cart_area4 = $_SESSION["cart_item"][$j]["quantity_area4"];
-					$total = ($cart_area1 * 60) + ($cart_area2* 45) + ($cart_area3 * 35) + ($cart_area4 * 20);
+					$sub_total = ($cart_area1 * 60) + ($cart_area2* 45) + ($cart_area3 * 35) + ($cart_area4 * 20);
+					$total_cost = $total_cost + $sub_total;
 				?>
-				<table>
-					<tr>
-						<td><?php echo $show_name; ?> <br>
-						<?php echo $show_date; ?><br>
-						<?php echo $show_time; ?></td>
-						<td><?php echo $cart_area1; ?> x S$60<br><?php echo $cart_area2; ?> x S$45<br><?php echo $cart_area3; ?> x S$35<br><?php echo $cart_area4; ?> x S$20</td>
-						<td>Total: <?php echo $total; ?></td>
-						<td><a href="<?php echo $_SERVER['PHP_SELF'].'?del='.$j; ?>" style="background-color:#000000; color:#ffffff;">Delete Tickets from Cart</a></td>
-						
-						<?php #echo "<td><a href='" .$_SERVER['PHP_SELF']. '?del=' .$j. "' style="">Delete Item</a></td>"; ?>
-					</tr>
-				</table>
-				<?php } ?>
-				<a href="<?php echo $_SERVER['PHP_SELF'].'?empty=1'; ?>" id="empty" value=0 style="background-color:#000000; color:#ffffff;">Empty Cart</a>
-				<?php if (count($_SESSION['cart_item']) > 0) {
-				?>
-				<br><br><strong>Key in information to make booking</strong>
-				<form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" id="loginform">
-					<label for="cust_name">*Name:</label>
-					<input type="text" name="cust_name" id="cust_name" required></input><br><br>
-					<label for="cust_phone">*Phone:</label>
-					<input type="text" name="cust_phone" id="cust_phone" required></input><br><br>
-					<label for="cust_email">*Email:</label>
-					<input type="text" name="cust_email" id="cust_email" required></input><br><br>
-					Have you made a booking with us before?
-					<label><input type="radio" name="membership" id="yes_member" value="1" required onclick="showMember_nonMember()">Yes</input></label>
-					<label><input type="radio" name="membership" id="no_member" value="0" required onclick="showMember_nonMember()">No</input></label>
-					<div id="not_a_member" style="display: none;">
-					<label>*Enter Password:</label><input type="password" name="new_password" id="new_password"></input><br>
-					<label>*Confirm Password:</label><input type="password" name="confirm_password" id="confirm_password"></input><br>
-					<input type="submit" name="new_account" id="new_account" value="Create Account"></input>
-					</div>
-					<div id="yes_a_member" style="display: none;">
-					<label>*Enter Password:</label><input type="password" name="old_password" id="old_password"></input><br>
-					<input type="submit" name="login" id="login" value="Login"></input>
-					</div>
-				</form>
-				<script type = "text/javascript"  src = "js/cart_information_validation.js" ></script>
-				<?php } else {?>
-				<br><br><strong>CART IS EMPTY</strong>
-				<?php } ?>
-			</div>
-			<br><br><br><br>
-            <footer>
-                <a style="float:left" href="#">
-                    <div class="logo-image-round">
-                          <img src="images/logo-image-round.png">
-                    </div>
-              </a>
-              <div class="contact">
-                  <p id="contact-title" style="float:left">Contact Us</p>
-                  <br><br>
-                  <ul>
-                      <li> 
-                        <img style="float:left" id="icon-image" src="images/location-image.png">
-                        &nbsp;&nbsp;&nbsp;1 Esplanade Dr, Singapore 038981
-                      </li>
-                      <br>
-                      <br>
-                      <li> 
-                        <img style="float:left" id="icon-image" src="images/phone-image.png">
-                        &nbsp;&nbsp;&nbsp;+65 7483 2289
-                      </li>
-                      <br>
-                      <br>
-                      <li> 
-                        <img style="float:left" id="icon-image" src="images/email-image.png">
-                        &nbsp;&nbsp;&nbsp;<a id="contact-email" href="mailto:info@blacksheeptheatre.com">info@blacksheeptheatre.com</a>
-                      </li>
-                  </ul>
-                  <p id="copyright">&copy; 2021 BlackSheep Theatre Company. All Rights Reserved.</p>
+          <div class="cart-card">
+            <div class="row">
+              <div class="column left">
+                <img src="<?php echo $show_img; ?>" width=88px height=110px align="center">
               </div>
-            </footer>
+              <div class="column middle1">
+                <p id="heading"><?php echo $show_name; ?></p>
+                <p class="body"><?php echo $show_date;?></p>
+                <p class="body"><?php echo $show_time; ?></p>
+              </div>
+              <div class="column middle2">
+                <p class="body">
+                  <?php echo $cart_area1; ?> x S$60
+                  <br>
+                  <?php echo $cart_area2; ?> x S$45
+				  <br>
+                  <?php echo $cart_area3; ?> x S$35
+				  <br>
+                  <?php echo $cart_area4; ?> x S$20
+                </p>
+              </div>
+              <div class="column middle2">
+                <p class="body">Subtotal<br><br><span id="subtotal">S$<?php echo $sub_total; ?></span></p>
+              </div>
+              <div class="column right">
+				<button class="cart-button"><a href="<?php echo $_SERVER['PHP_SELF'].'?del='.$j;?>" style="color: #ffffff; text-decoration:none;">Remove Item</a></button>
+              </div>
+            </div>
+          </div>
+				<?php } ?>
+            
+          </div>
+        </div>
+        <div class="total">
+          <div class="row">
+            <button class="cart-button"><a href="<?php echo $_SERVER['PHP_SELF'].'?empty=1'; ?>" id="empty" value=0 style="color: #ffffff; text-decoration:none;">Clear Cart</a></button>
+            <p>Total: <span id="price-text">S$<?php echo $total_cost; ?></span></p>
+          </div>
+        </div>
+        <div class="form">
+			<p style="font-size:30px;font-family: Montserrat-SemiBold;"><strong>Key in information to make booking</strong></p><br>
+			<form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" id="loginform">
+						<label for="cust_name">*Name:</label>
+						<input type="text" name="cust_name" id="cust_name" required style="height: 30px;width :500px;"></input><br><br>
+						<label for="cust_phone">*Phone Number:</label>
+						<input type="text" name="cust_phone" id="cust_phone" required style="height: 30px;width :425px;"></input><br><br>
+						<label for="cust_email">*Email:</label>
+						<input type="text" name="cust_email" id="cust_email" required style="height: 30px;width:510px;"></input><br><br>
+						Have you made a booking with us before?
+						<label><input type="radio" name="membership" id="yes_member" value="1" required onclick="showMember_nonMember()">Yes</input></label>
+						<label><input type="radio" name="membership" id="no_member" value="0" required onclick="showMember_nonMember()">No</input></label><br><br><br>
+						<div id="not_a_member" style="display: none;">
+							<label>*Enter Password:</label><input type="password" name="new_password" id="new_password" style="height: 30px;width:430px;"></input><br>
+							<label>*Confirm Password:</label><input type="password" name="confirm_password" id="confirm_password" style="height: 30px;width:410px;"></input><br>
+							<p>*An email confirmation will be sent on successful payment.</p>
+							<input type="submit" name="new_account" id="new_account" value="Create Account & Checkout" class="form-button"></input>
+						</div>
+						<div id="yes_a_member" style="display: none;">
+							<label>*Enter Password:</label><input type="password" name="old_password" id="old_password"style="height: 30px;width:430px;"></input><br>
+							<p>*An email confirmation will be sent on successful payment.</p>
+							<input type="submit" name="login" id="login" value="Login & Checkout" class="form-button"></input>
+						</div>
+						<br><br>
+					</form>
+          <script type = "text/javascript"  src = "js/cart_information_validation.js" ></script>
+		<?php } else {?>
+			<div class="cart-header" style="font-size:30px;">
+			<br><br><br>Cart is Empty <br><br><br><br><br><br>
+			</div>
+		<?php } ?>
+        </div>
+        <footer>
+            <a style="float:left" href="#">
+                <div class="logo-image-round">
+                      <img src="images/logo-image-round.png">
+                </div>
+          </a>
+          <div class="contact">
+              <p id="contact-title" style="float:left">Contact Us</p>
+              <br><br>
+              <ul>
+                  <li> 
+                    <img style="float:left" id="icon-image" src="images/location-image.png">
+                    &nbsp;&nbsp;&nbsp;1 Esplanade Dr, Singapore 038981
+                  </li>
+                  <br>
+                  <br>
+                  <li> 
+                    <img style="float:left" id="icon-image" src="images/phone-image.png">
+                    &nbsp;&nbsp;&nbsp;+65 7483 2289
+                  </li>
+                  <br>
+                  <br>
+                  <li> 
+                    <img style="float:left" id="icon-image" src="images/email-image.png">
+                    &nbsp;&nbsp;&nbsp;<a id="contact-email" href="mailto:info@blacksheeptheatre.com">info@blacksheeptheatre.com</a>
+                  </li>
+              </ul>
+              <p id="copyright">&copy; 2021 BlackSheep Theatre Company. All Rights Reserved.</p>
+          </div>
+        </footer>
     </body>
 </html>

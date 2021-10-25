@@ -423,7 +423,7 @@ unset ($_POST["buy"]);
 				}
 				for ($i=0; $i < $num_results; $i++) {
 					$show_datetime = DateTime::createFromFormat('Y-m-d H:i:s', $resultset[$i]["datetime"]);
-					$show_date = $show_datetime->format('jS F Y');
+					$show_date = $show_datetime->format('jS F Y , l');
 					$show_time = $show_datetime->format('h:i a');
 			?>
             <div class="ticket-card">
