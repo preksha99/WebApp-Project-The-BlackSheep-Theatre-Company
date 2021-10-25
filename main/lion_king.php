@@ -344,6 +344,7 @@ unset ($_POST["buy"]);
                 <li><a href="home.html">Home</a>&nbsp;</li>
                 <li><a class="active" href="plays.html">Plays</a>&nbsp;<li>
                 <li><a href="contact.html">Contact Us</a>&nbsp;</li>
+				<li><a href="login.php">My Bookings</a>&nbsp;</li>
                 <a style="float:right" href="cart.php">
                     <div class="cart-image">
                           <img src="images/cart-image.png">

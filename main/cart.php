@@ -190,7 +190,7 @@ if ($_POST["new_account"]){
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>The BlackSheep Theatre Company</title>
+        <title>The BlackSheep Theatre Company - Cart</title>
         <link rel="stylesheet" href="style.css">
         <meta charset="utf-8">
     </head>
@@ -206,6 +206,7 @@ if ($_POST["new_account"]){
                     <li><a href="home.html">Home</a>&nbsp;</li>
 				    <li><a href="plays.html">Plays</a>&nbsp;<li>
 				    <li><a href="contact.html">Contact Us</a>&nbsp;</li>
+					<li><a href="login.php">My Bookings</a>&nbsp;</li>
 					<span id="countdown" class="timer"></span>
 					<script>/*
 var seconds = 120;

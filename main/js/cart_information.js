@@ -16,6 +16,16 @@ function validateForm() {
     nameNode.select();
 	return false;
 	}
+		
+	var phone_test = phone_regex.test(phoneNode.value);
+	if (phone_test == false) {
+    alert("The phone number entered (\"" + phoneNode.value + 
+          "\") is invalid.\n"+
+		  "Kindly enter a valid phone number. ");
+    phoneNode.focus();
+    phoneNode.select();
+	return false;
+	}
 	
 	var email_test = email_regex.test(emailNode.value);
 	if (email_test == false) {
@@ -27,15 +37,6 @@ function validateForm() {
 	return false;
 	}
 	
-	var phone_test = phone_regex.test(phoneNode.value);
-	if (phone_test == false) {
-    alert("The phone number entered (\"" + phoneNode.value + 
-          "\") is invalid.\n"+
-		  "Kindly enter a valid phone number. ");
-    phoneNode.focus();
-    phoneNode.select();
-	return false;
-	}
 	if (document.getElementById("no_member").checked) {
 		var pwdNode = document.getElementById("new_password");
 		var confirm_pwdNode = document.getElementById("confirm_password");
