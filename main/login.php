@@ -39,6 +39,11 @@ if ($_POST["booking_check"]){
         <title>The BlackSheep Theatre Company - Login</title>
         <link rel="stylesheet" href="style.css">
         <meta charset="utf-8">
+        <style>
+          .content img {
+            /* margin-left: 10px; */
+          }
+        </style>
     </head>
     <body>
 	<script type = "text/javascript"  src = "js/booking_validation.js" ></script>
@@ -62,9 +67,9 @@ if ($_POST["booking_check"]){
                 </ul>
             </nav>
 			<div id="headingtext">
-				Get all your booking history here!<p>Simply login using your account</p>
+				GET ALL YOUR <br>BOOKING HISTORY HERE!<p>Simply login using your account!</p>
 				<div id="content">
-					<img src="images/theatre.jpg" width=480px height=410px align="left" hspace="60px" style="margin-left:250px;">
+					<img src="images/pastbookings.png" width=450px height=450px align="left" hspace="60px" style="margin-left:220px;">
 					<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" id="retrieve_bookingform">
 						<label for="name">Name:</label><br>
 						<input type="text" name="name" id="login_name" required style="height: 30px;width :450px;"></input>
