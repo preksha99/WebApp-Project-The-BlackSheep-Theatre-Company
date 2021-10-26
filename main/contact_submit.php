@@ -1,3 +1,22 @@
+<?php 
+$j = 1;
+$to      = 'f32ee@localhost';
+$subject = 'Thank you for contacting The BlackSheep Theatre Company';
+$message = "Dear ".$_POST['name'].",
+Thank you for contacting The BlackSheep Theatre Company. 
+We will get back to you in 1-2 days at '".$_POST['email']."'. 
+We look forward to serving you soon.
+
+Best Regards,
+The BlackSheep Theatre Company";
+
+$headers = 'From: f32ee@localhost' . "\r\n" .
+    'Reply-To: f32ee@localhost' . "\r\n" .
+    'X-Mailer: PHP/' . phpversion();
+
+mail($to, $subject, $message, $headers,'-ff32ee@localhost');
+#echo ("mail sent to : ".$to);
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -26,27 +45,8 @@
                 </ul>
             </nav>
 			<div id="headingtext">
-				HAVE A FEW QUESTIONS?<p>We’d love to get in touch with you! Here’s how you can reach us.</p>
-				<div id="content">
-					<img src="images/phone.png" width=480px height=600px align="left" hspace="60px" style="margin-left:250px;">
-					<form action="contact_submit.php" method="post" id="contactform">
-						<label for="name">Name:</label><br>
-						<input type="text" name="name" id="Name" required style="height: 30px;width :450px;"></input>
-						<br><br>
-						<label for="phone">Phone Number:</label><br>
-						<input type="text" name="phone" id="Phone" required style="height: 30px;width :450px;"></input>
-						<br><br>
-						<label for="email">Email:</label><br>
-						<input type="email" name="email" id="Email" required style="height: 30px;width :450px;"></input>
-						<br><br>
-						<label for="queries">Questions/Queries:</label><br>
-						<textarea name="queries" required style="height: 200px;width :450px;"></textarea>
-						<br><br><br>
-						<input type="reset" value="Reset Form" class="submitbutton"></input>
-						<input type="submit" value="Send Message" class="submitbutton"></input>	
-					</form>
-				<script type = "text/javascript"  src = "js/contact_validation_registry.js" ></script>
-				</div>
+				<p style="font size: 30px;">Thank you for contacting us! We will reach out to you within 1-2 days.</p><br>
+				<img src="images/thankyou.jpg" width=600px height=382px style="margin-left:auto;">
 			</div>
 			<br><br><br><br>
             <footer>

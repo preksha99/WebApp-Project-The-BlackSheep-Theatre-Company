@@ -362,12 +362,12 @@ unset ($_POST["buy"]);
                 </div>
                 <div class="column right" >
                   <div id="synopsis">
-                    <p id="genre">Musical, Drama</p>
-                    <p id="heading">Hamilton</p>
-                    <p id="details"><span id="category">Director:</span> Alex Lacamoire</p>
+                    <p id="genre">Musical, Fantasy</p>
+                    <p id="heading">Wicked</p>
+                    <p id="details"><span id="category">Director:</span> Joe Mantello</p>
                     <p id="details"><span id="category">Writers:</span> Bob Fosse, Fred Ebb</p>
                     <p id="details"><span id="category">Starring:</span> Bianca Marroquín, Ana Villafañe, Paulo Szot</p>
-                    <p id="details"><span id="category">Dates:</span> 1 - 4 November 2021</p>
+                    <p id="details"><span id="category">Dates:</span> 25 - 28 November 2021</p>
                     <p id="details"><span id="category">Location:</span> Esplanade Theatre</p>
                     <p id="details"><span id="category">Language:</span> English</p>
                     <p id="details"><span id="category">Running Time:</span> 150 minutes</p>
@@ -415,7 +415,7 @@ unset ($_POST["buy"]);
             <a name="A"></a>
 			<?php 
 				$date = date('Y-m-d H:i:s');
-				$query = "SELECT * FROM schedule WHERE schedule.datetime >= '".$date."' and showid=1";
+				$query = "SELECT * FROM schedule WHERE schedule.datetime >= '".$date."' and showid=6";
 				$result = $db->query($query);
 				$num_results = $result->num_rows;
 				while($row=mysqli_fetch_assoc($result)) {

@@ -18,17 +18,7 @@ function validateForm() {
     nameNode.select();
 	return false;
 	}
-	
-	var email_test = email_regex.test(emailNode.value);
-	if (email_test == false) {
-    alert("The email you entered (\"" + emailNode.value + 
-          "\") is invalid.\n"+
-		  "Kindly enter a valid email address. ");
-    emailNode.focus();
-    emailNode.select();
-	return false;
-	}
-	
+
 	var phone_test = phone_regex.test(phoneNode.value);
 	if (phone_test == false) {
     alert("The Phone Number you entered (\"" + phoneNode.value + 
@@ -36,6 +26,16 @@ function validateForm() {
 		  "Kindly enter a valid Phone Number without spaces. ");
     phoneNode.focus();
     phoneNode.select();
+	return false;
+	}
+		
+	var email_test = email_regex.test(emailNode.value);
+	if (email_test == false) {
+    alert("The email you entered (\"" + emailNode.value + 
+          "\") is invalid.\n"+
+		  "Kindly enter a valid email address. ");
+    emailNode.focus();
+    emailNode.select();
 	return false;
 	}
 }

@@ -27,7 +27,7 @@ body {font-family:Montserrat-SemiBold, Montserrat-Medium, Montserrat-Regular, Mo
     background-color:#FFE3E3;
     overflow-x: hidden;
 	width: 100%;
-	min-width: screen;
+	min-width: 1500px;
 	margin: 0px;
 }
 #nav {
