@@ -5,11 +5,10 @@ $subject = 'Thank you for contacting The BlackSheep Theatre Company';
 $message = "Dear ".$_POST['name'].",
 Thank you for contacting The BlackSheep Theatre Company. 
 We will get back to you in 1-2 days at '".$_POST['email']."'. 
-We look forward to serving you soon.";
+We look forward to serving you soon.
 
-$message = $message."
 Best Regards,
-The BlackSheep Theatre Company".[$j+1]."";
+The BlackSheep Theatre Company";
 
 $headers = 'From: f32ee@localhost' . "\r\n" .
     'Reply-To: f32ee@localhost' . "\r\n" .
