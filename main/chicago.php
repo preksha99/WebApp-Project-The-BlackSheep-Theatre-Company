@@ -20,7 +20,7 @@ if (isset($_POST["buy"])) {
 	$itemArray = array("showid"=>$_POST["showid"], "scheduleid"=>$_POST["scheduleid"], "quantity_area1"=>$_POST['quantity_area1'], 
 	"quantity_area2"=>$_POST['quantity_area2'], "quantity_area3"=>$_POST['quantity_area3'], "quantity_area4"=>$_POST['quantity_area4']);
 	
-	var_dump ($itemArray);
+	#var_dump ($itemArray);
 	if (($_POST['quantity_area1']==0)&&($_POST['quantity_area2']==0)&&($_POST['quantity_area3']==0)&&($_POST['quantity_area4']==0)) {
 		$all_zero = true;
 	}

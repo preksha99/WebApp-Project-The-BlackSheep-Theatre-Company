@@ -68,10 +68,13 @@ if ($_POST["login"]){
 	if ($login_query_num_results > 0) {
 		?><script type="text/javascript">alert("Thank you for your details! Your booking is confirmed.\n" + "You will now be redirected to confirmation page!");</script>
 <?php
-		$customer_query = "SELECT customerid FROM customers WHERE email='".trim($_POST['cust_email'])."'";
+		$customer_query = "SELECT * FROM customers WHERE email='".trim($_POST['cust_email'])."'";
 		$customer_query_result = $db->query($customer_query);
 		$customer_row=mysqli_fetch_assoc($customer_query_result);
-		$customerid = $customer_row['customerid'];
+		$customerid = (int)$customer_row['customerid'];
+		#echo $customerid."<br>";
+		$_SESSION['customer_login_name'] = $customer_row['name'];
+		#echo ($_SESSION['customer_login_name']);
 		
 		for ($j=0; $j<count($_SESSION["cart_item"]); $j++){ 
 			$showid = $_SESSION["cart_item"][$j]["showid"];
@@ -105,10 +108,12 @@ if ($_POST["new_account"]){
 		if ($new_account_query_result) {
 			?><script type="text/javascript">alert("Thank you for your details! An account has been created susing the details. Your booking has been confirmed.\n" + "You will now be redirected to confirmation page!");</script>
 <?php		
-			$customer_query = "SELECT customerid FROM customers WHERE email='".trim($_POST['cust_email'])."'";
+			$customer_query = "SELECT * FROM customers WHERE email='".trim($_POST['cust_email'])."'";
 			$customer_query_result = $db->query($customer_query);
 			$customer_row=mysqli_fetch_assoc($customer_query_result);
 			$customerid = (int)$customer_row['customerid'];
+			$_SESSION['customer_login_name'] = $customer_row['name'];
+			
 			
 			for ($j=0; $j<count($_SESSION["cart_item"]); $j++){ 
 				$showid = $_SESSION["cart_item"][$j]["showid"];

@@ -1,5 +1,5 @@
 <?php 
-echo "Hello order confirmed";
+
 @ $db = new mysqli('localhost', 'f32ee', 'f32ee', 'f32ee');
 if (mysqli_connect_errno()) {
      echo 'Error: Could not connect to database.  Please try again later.';
@@ -12,10 +12,10 @@ if (!isset($_SESSION))  {
 		$_SESSION['cart_item'] = array();
 	}
 	#unset($_SESSION["cart"]);
-	var_dump($_SESSION);
+	#var_dump($_SESSION);
 }
 $id = session_id();
-echo "<br>Session id = $id <br>";
+#echo "<br>Session id = $id <br>";
 
 $shows_query = "SELECT * FROM shows";
 $shows_result = $db->query($shows_query);
@@ -31,6 +31,17 @@ $schedule_num = $schedule_result->num_rows;
 while($row=mysqli_fetch_assoc($schedule_result)) {
 				$schedule_set[$row["scheduleid"]] = $row;
 }
+$to      = 'f32ee@localhost';
+$subject = 'Booking Confirmation - The BlackSheep Theatre Company';
+$message = "Dear ".$_SESSION['customer_login_name'].",
+Thank you for making a booking via The BlackSheep Theatre Company. 
+This email serves as the confirmation for your recent booking. 
+
+Please find the booking details as follows:";
+$headers = 'From: f32ee@localhost' . "\r\n" .
+    'Reply-To: f32ee@localhost' . "\r\n" .
+    'X-Mailer: PHP/' . phpversion();
+
 ?>
 
 <!DOCTYPE html>
@@ -70,6 +81,11 @@ while($row=mysqli_fetch_assoc($schedule_result)) {
 					$cart_area3 = $_SESSION["cart_item"][$j]["quantity_area3"];
 					$cart_area4 = $_SESSION["cart_item"][$j]["quantity_area4"];
 					$total = ($cart_area1 * 60) + ($cart_area2* 45) + ($cart_area3 * 35) + ($cart_area4 * 20);
+					$index = $j +1;
+					$message = $message."
+					
+".$index.".  ".$show_name." - ".$show_date." ".$show_time."  
+Qty: ".$cart_area1." x Area 1;   ".$cart_area2." x Area 2;   ".$cart_area3." x Area 3;   ".$cart_area4." x Area 4;";
 				?>
 				<table>
 					<tr>
@@ -81,6 +97,15 @@ while($row=mysqli_fetch_assoc($schedule_result)) {
 					</tr>
 				</table>
 				<?php } ?>
+				<?php $message = $message."
+				
+Thank you for choosing to book with us. We hope to see you soon!
+				
+Best Regards,
+The BlackSheep Theatre Company";
+				if (count($_SESSION["cart_item"])>0) {
+				mail($to, $subject, $message, $headers,'-ff32ee@localhost');}
+				?>
 				</div>
 				<footer>
                 <a style="float:left" href="#">
