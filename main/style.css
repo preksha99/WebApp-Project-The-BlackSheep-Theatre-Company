@@ -31,7 +31,7 @@ body {font-family:Montserrat-SemiBold, Montserrat-Medium, Montserrat-Regular, Mo
 }
 #nav {
   font-family:Montserrat-SemiBold;
-  font-size: 13.5px;
+  font-size: 15px;
   width: 100%;
   display: inline-block;
   text-align: center;
@@ -66,9 +66,18 @@ body {font-family:Montserrat-SemiBold, Montserrat-Medium, Montserrat-Regular, Mo
   overflow: hidden;
   margin-top: -6px;
 }
+
+#nav  .bookings-image img{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-top: -6px;
+  padding-right: 20px;
+}
 #nav  .logo-image img{
-  width: 90px;
-  height: 90px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   overflow: hidden;
   margin-top: -25px;

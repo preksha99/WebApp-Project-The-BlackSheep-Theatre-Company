@@ -196,18 +196,29 @@ if ($_POST["new_account"]){
     </head>
     <body>
 		<script type = "text/javascript"  src = "js/cart_information.js" ></script>
-            <nav>
+		<nav>
                 <ul id="nav">
                     <a style="float:left" href="#">
                         <div class="logo-image">
-                              <img src="images/logo-image.png">
+                              <img src="images/logo-image.png" class="img-fluid">
                         </div>
                   </a>
-                    <li><a href="home.html">Home</a>&nbsp;</li>
+                    <li><a class="active" href="home.html">Home</a>&nbsp;</li>
 				    <li><a href="plays.html">Plays</a>&nbsp;<li>
 				    <li><a href="contact.html">Contact Us</a>&nbsp;</li>
-					<li><a href="login.php">My Bookings</a>&nbsp;</li>
-					<span id="countdown" class="timer"></span>
+            
+                    <a style="float:right" href="cart.php">
+                        <div class="cart-image">
+                              <img src="images/cart-image.png" class="img-fluid">
+                        </div>
+                  </a>
+                  <a style="float:right"href="login.php">
+                    <div class="bookings-image">
+                          <img src="images/bookings.png" class="img-fluid">
+                    </div>
+                  </a>
+                </ul>
+            </nav>
 					<script>/*
 var seconds = 120;
 function secondPassed() {
@@ -227,13 +238,6 @@ function secondPassed() {
  
 var countdownTimer = setInterval('secondPassed()', 1000);*/
 					</script>
-                    <a style="float:right" href="cart.php" class="active">
-                        <div class="cart-image">
-                              <img src="images/cart-image.png">
-                        </div>
-                  </a>
-                </ul>
-            </nav>
 			<div id="content">
 				<?php for ($j=0; $j<count($_SESSION["cart_item"]); $j++){ 
 					$show_name = $shows_set[$_SESSION["cart_item"][$j]["showid"]]["name"];

@@ -52,21 +52,26 @@ $headers = 'From: f32ee@localhost' . "\r\n" .
         <meta charset="utf-8">
     </head>
     <body>
-            <nav>
+    <nav>
                 <ul id="nav">
                     <a style="float:left" href="#">
                         <div class="logo-image">
-                              <img src="images/logo-image.png">
+                              <img src="images/logo-image.png" class="img-fluid">
                         </div>
                   </a>
-                    <li><a href="home.html">Home</a>&nbsp;</li>
+                    <li><a class="active" href="home.html">Home</a>&nbsp;</li>
 				    <li><a href="plays.html">Plays</a>&nbsp;<li>
 				    <li><a href="contact.html">Contact Us</a>&nbsp;</li>
-					<span id="countdown" class="timer"></span>
-                    <a style="float:right" href="cart.php" class="active">
+            
+                    <a style="float:right" href="cart.php">
                         <div class="cart-image">
-                              <img src="images/cart-image.png">
+                              <img src="images/cart-image.png" class="img-fluid">
                         </div>
+                  </a>
+                  <a style="float:right"href="login.php">
+                    <div class="bookings-image">
+                          <img src="images/bookings.png" class="img-fluid">
+                    </div>
                   </a>
                 </ul>
             </nav>

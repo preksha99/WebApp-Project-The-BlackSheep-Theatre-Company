@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>The BlackSheep Theatre Company - Home</title>
+        <link rel="stylesheet" href="style.css">
+        <meta charset="utf-8">
+        <style>
+            .confirmation-header {
+            align-items: center;
+            font-family: Montserrat-SemiBold;
+            font-size: 35px;
+            text-align: center;
+            text-decoration: none;
+          }
+          .confirmation-header .congrats{
+            align-items: center;
+            font-family: Montserrat-ExtraBold;
+            font-size: 55px;
+            text-align: center;
+            text-decoration: none;
+          }
+          .booking-details {
+              width: 1000px;
+              height: 1100px;
+              background-color: white;
+              margin-left: 230px;
+              margin-bottom: 40px;
+          }
+          .booking-details #statement{
+              font-family: Montserrat-SemiBold;
+              font-size: 18px;
+              margin-left: 40px;
+              padding-top: 20px;      
+            }
+            .row {
+                display: flex;
+                margin-bottom: 45px;
+            }
+            .left{
+                flex: 35%;
+            }
+            .left img {
+                margin-left: 80px;
+            }
+            .middle {
+                flex: 50%;
+            }
+            .middle #show-details {
+                font-family: Montserrat-SemiBold;
+                font-size: 17px;
+                text-align: left;
+            }
+            .show-name {
+                font-family: Montserrat-Bold;
+                font-size: 35px;
+            }
+            .right {
+                flex: 15%;
+            }
+            .right #subtotal {
+                font-family: Montserrat-SemiBold;
+                font-size: 17px;
+                text-align: left;
+                padding-top: 60px;
+            }
+            .price {
+                font-family: Montserrat-Bold;
+                font-size: 20px;
+            }
+            .total {
+                margin-left: 780px;
+            }
+            .total #total{
+                font-family: Montserrat-SemiBold;
+                font-size: 20px;
+            }
+            .total-price {
+                font-family: Montserrat-Bold;
+                font-size: 30px;
+            }
+            .confirmation {
+                margin-left: 50px;
+                padding-top: 10px;
+            }
+            .confirmation p {
+                font-family: Montserrat-Regular;
+                font-size: 14px;
+            }
+            .button {
+                margin-left: 15px;
+                margin-top: 40px;
+                background-color: #292121;
+                width:230px;
+                height:50px;
+            }
+            .button a {
+                font-family: Montserrat-SemiBold;
+                font-style: inherit;
+                text-decoration: none;
+                /* font-weight: 550; */
+                font-size: 23px;
+                /* line-height: 28px; */
+                text-align: center;
+                color: #FFFFFF;
+            }
+            .back-button {
+                margin-left: 600px;
+                margin-bottom: 60px;
+            }
+
+        </style>
+    </head>
+    <body>
+            <nav>
+                <ul id="nav">
+                    <a style="float:left" href="#">
+                        <div class="logo-image">
+                              <img src="images/logo-image.png" class="img-fluid">
+                        </div>
+                  </a>
+                    <li><a class="active" href="home.html">Home</a>&nbsp;</li>
+				    <li><a href="plays.html">Plays</a>&nbsp;<li>
+				    <li><a href="contact.html">Contact Us</a>&nbsp;</li>
+            
+                    <a style="float:right" href="confirmation.html">
+                        <div class="cart-image">
+                              <img src="images/cart-image.png" class="img-fluid">
+                        </div>
+                  </a>
+                  <a style="float:right"href="login.php">
+                    <div class="bookings-image">
+                          <img src="images/bookings.png" class="img-fluid">
+                    </div>
+                  </a>
+                </ul>
+            </nav>
+            <div class="confirmation-header">
+                <p><span class="congrats">CONGRATULATIONS,</span><br>YOU'RE ALL BOOKED!</p>
+            </div>
+            <div class="booking-details">
+                <p id="statement">Your booking details are as follows:</p>
+                <br><br>
+                <div class="row">
+                    <div class="column left">
+                        <img src="chicago.png" width=166px height=242px align="center">
+                    </div>
+                    <div class="column middle">
+                        <p id="show-details">
+                            <span class="show-name">Chicago</span><br><br>
+                            25 October 2021, Monday<br>
+                            7:30 pm<br><br><br>
+                            2 x S$20<br>
+                            2 x S$45
+                        </p>
+                    </div>
+                    <div class="column right">
+                        <p id="subtotal">
+                            Subtotal<br>
+                            <span class="price">S$130</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column left">
+                        <img src="wicked.png" width=166px height=242px align="center">
+                    </div>
+                    <div class="column middle">
+                        <p id="show-details">
+                            <span class="show-name">Wicked</span><br><br>
+                            01 November 2021, Monday<br>
+                            5:30 pm<br><br><br>
+                            1 x S$60
+                        </p>
+                    </div>
+                    <div class="column right">
+                        <p id="subtotal">
+                            Subtotal<br>
+                            <span class="price">S$60</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column left">
+                        <img src="hamilton.png" width=166px height=242px align="center">
+                    </div>
+                    <div class="column middle">
+                        <p id="show-details">
+                            <span class="show-name">Hamilton</span><br><br>
+                            18 November 2021, Thursday<br>
+                            8:45 pm<br><br><br>
+                            1 x S$35
+                        </p>
+                    </div>
+                    <div class="column right">
+                        <p id="subtotal">
+                            Subtotal<br>
+                            <span class="price">S$35</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="total">
+                    <p id="total">Total: <span class="total-price">S$225</span></p>
+                </div>
+                <div class="confirmation">
+                    <p id="confirmation">An email confirmation of the same has been sent to your registered email address.</p>
+                </div>
+            </div>
+            <div class="back-button">
+                <button type="button" class="button"><a href="home.html">Back To Home</a></button>
+            </div>
+            <footer>
+                <a style="float:left" href="#">
+                    <div class="logo-image-round">
+                          <img src="images/logo-image-round.png" class="img-fluid">
+                    </div>
+              </a>
+              <div class="contact">
+                  <p id="contact-title" style="float:left">Contact Us</p>
+                  <br>
+                  <br>
+                  <ul>
+                      <li> 
+                        <img style="float:left" id="icon-image" src="images/location-image.png">
+                        &nbsp;&nbsp;&nbsp;1 Esplanade Dr, Singapore 038981
+                      </li>
+                      <br>
+                      <br>
+                      <li> 
+                        <img style="float:left" id="icon-image" src="images/phone-image.png">
+                        &nbsp;&nbsp;&nbsp;+65 7483 2289
+                      </li>
+                      <br>
+                      <br>
+                      <li> 
+                        <img style="float:left" id="icon-image" src="images/email-image.png">
+                        &nbsp;&nbsp;&nbsp;<a id="contact-email" href="mailto:info@blacksheeptheatre.com">info@blacksheeptheatre.com</a>
+                      </li>
+                  </ul>
+                  <p id="copyright">&copy; 2021 BlackSheep Theatre Company. All Rights Reserved.</p>
+              </div>
+            </footer>
+    </body>
+</html>
