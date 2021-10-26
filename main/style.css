@@ -25,6 +25,7 @@
 
 body {font-family:Montserrat-SemiBold, Montserrat-Medium, Montserrat-Regular, Montserrat-Bold, Montserrat-Black, Montserrat-ExtraBold;
     background-color:#FFE3E3;
+    overflow-x: hidden;
 	width: 100%;
 	min-width: screen;
 	margin: 0px;
@@ -269,6 +270,7 @@ footer {
 
 .upcoming {
   background-color: #D691A0;
+  /* width: 1400px; */
   height: 800px;
   font-family: Montserrat-ExtraBold;
 	font-style: normal;
@@ -282,8 +284,8 @@ footer {
   width: 1400px; 
   border-spacing: 0 80px;
 	margin-top: 10px; 
-	margin-left: auto;
-	margin-right:auto;
+	/* margin-left: auto; */
+	/* margin-right:auto; */
 	/* padding-left:50px;   */
 	margin-bottom:80px;
 }
