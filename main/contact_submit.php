@@ -34,7 +34,7 @@ mail($to, $subject, $message, $headers,'-ff32ee@localhost');
                         </div>
                   </a>
                     <li><a class="active" href="home.html">Home</a>&nbsp;</li>
-				    <li><a href="plays.html">Plays</a>&nbsp;<li>
+				    <li><a class="active" href="plays.html">Plays</a>&nbsp;<li>
 				    <li><a href="contact.html">Contact Us</a>&nbsp;</li>
             
                     <a style="float:right" href="cart.php">

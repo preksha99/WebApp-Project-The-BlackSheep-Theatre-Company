@@ -1,12 +1,12 @@
 use f32ee;
 
 insert into shows values
-  (1, "Hamilton", "Playing", "images/hamilton1.png"),
-  (2, "Chicago", "Playing", "images/chicago1.png"),
-  (3, "The Phantom of the Opera", "Playing", "images/opera1.png"),
-  (4, "The Lion King", "Playing", "images/lion_king1.png"),
-  (5, "Les Miserables", "Playing", "images/les_miserables1.png"),
-  (6, "Wicked", "Playing", "images/wicked1.png");
+  (1, "Hamilton", "Playing", "images/hamilton.png"),
+  (2, "Chicago", "Playing", "images/chicago.png"),
+  (3, "The Phantom of the Opera", "Playing", "images/opera.png"),
+  (4, "The Lion King", "Playing", "images/lion_king.png"),
+  (5, "Les Miserables", "Playing", "images/les_miserables.png"),
+  (6, "Wicked", "Playing", "images/wicked.png");
 
 insert into schedule values
   (1, 1, "2021-11-01 19:30:00", 50, 40, 30, 20),

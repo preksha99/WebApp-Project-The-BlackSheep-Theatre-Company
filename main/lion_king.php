@@ -93,7 +93,7 @@ unset ($_POST["buy"]);
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>The BlackSheep Theatre Company</title>
+        <title>The BlackSheep Theatre Company - Lion King</title>
         <link rel="stylesheet" href="style.css">
         <meta charset="utf-8">
         <style>

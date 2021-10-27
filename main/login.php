@@ -54,7 +54,7 @@ if ($_POST["booking_check"]){
                               <img src="images/logo-image.png" class="img-fluid">
                         </div>
                   </a>
-                    <li><a class="active" href="home.html">Home</a>&nbsp;</li>
+                    <li><a href="home.html">Home</a>&nbsp;</li>
 				    <li><a href="plays.html">Plays</a>&nbsp;<li>
 				    <li><a href="contact.html">Contact Us</a>&nbsp;</li>
             

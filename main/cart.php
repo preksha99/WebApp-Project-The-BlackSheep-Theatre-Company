@@ -106,8 +106,9 @@ if ($_POST["new_account"]){
 		$new_account_query = "INSERT into customers (name, phone, email, password) values ('".trim($_POST['cust_name'])."', '".trim($_POST['cust_phone'])."', '".trim($_POST['cust_email'])."', '".$password."');";
 		$new_account_query_result = $db->query($new_account_query);
 		if ($new_account_query_result) {
-			?><script type="text/javascript">alert("Thank you for your details! An account has been created susing the details. Your booking has been confirmed.\n" + "You will now be redirected to confirmation page!");</script>
+			?><script type="text/javascript">alert("Thank you for your details! An account has been created using the details and a confirmation email has been sent. Your booking has been confirmed.\n" + "You will now be redirected to confirmation page!");</script>
 <?php		
+			
 			$customer_query = "SELECT * FROM customers WHERE email='".trim($_POST['cust_email'])."'";
 			$customer_query_result = $db->query($customer_query);
 			$customer_row=mysqli_fetch_assoc($customer_query_result);
@@ -124,7 +125,22 @@ if ($_POST["new_account"]){
 				$order_query = "INSERT into bookings (customerid, showid, scheduleid, quantity_area1, quantity_area2, quantity_area3, quantity_area4, booking_date) values (".$customerid.", ".$showid.", ".$scheduleid.", ".$_SESSION["cart_item"][$j]["quantity_area1"].", ".$_SESSION["cart_item"][$j]["quantity_area2"].", ".$_SESSION["cart_item"][$j]["quantity_area3"].", ".$_SESSION["cart_item"][$j]["quantity_area1"].", '".$date."');";
 				$order_query_result = $db->query($order_query);
 			}
-			
+$to = 'f32ee@localhost';
+$subject = 'New Account Created - The BlackSheep Theatre Company';
+$message = "Dear ".trim($_POST['cust_name']).",
+Thank you for creating an account with The BlackSheep Theatre Company. 
+Please find the account details below that can be used to login:
+Name: ".trim($_POST['cust_name'])."
+Phone: ".trim($_POST['cust_phone'])."
+Email: ".trim($_POST['cust_email'])."
+We hope to see you soon at the theatre!
+ 
+Best Regards, 
+The BlackSheep Theatre Company";
+$headers = 'From: f32ee@localhost' . "\r\n" .
+    'Reply-To: f32ee@localhost' . "\r\n" .
+    'X-Mailer: PHP/' . phpversion();
+mail($to, $subject, $message, $headers,'-ff32ee@localhost');			
 			?><script type="text/javascript">window.location.href='http://192.168.56.2/f32ee/Project_Latest/confirmation.php'; </script>
 			<?php
 		
@@ -136,7 +152,7 @@ if ($_POST["new_account"]){
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>The BlackSheep Theatre Company</title>
+        <title>The BlackSheep Theatre Company - Cart</title>
         <link rel="stylesheet" href="style.css">
         <meta charset="utf-8">
         <style>
@@ -290,7 +306,7 @@ if ($_POST["new_account"]){
                               <img src="images/logo-image.png" class="img-fluid">
                         </div>
                   </a>
-                    <li><a class="active" href="home.html">Home</a>&nbsp;</li>
+                    <li><a href="home.html">Home</a>&nbsp;</li>
 				    <li><a href="plays.html">Plays</a>&nbsp;<li>
 				    <li><a href="contact.html">Contact Us</a>&nbsp;</li>
             
