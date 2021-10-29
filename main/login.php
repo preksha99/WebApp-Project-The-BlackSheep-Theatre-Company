@@ -17,15 +17,16 @@ $id = session_id();
 
 if ($_POST["booking_check"]){
 	$password = md5(trim($_POST['password']));
-	echo $password;
-	$login_query = "SELECT * FROM customers WHERE email='".trim($_POST['email'])."'and password='".$password."'";
+	$email = strtolower($_POST['email']);
+	#echo $password;
+	$login_query = "SELECT * FROM customers WHERE email='".trim($email)."'and password='".$password."'";
 	$login_query_result = $db->query($login_query);
 	$login_query_num_results = $login_query_result->num_rows;
-	echo $login_query_num_results;
+	#echo $login_query_num_results;
 	if ($login_query_num_results > 0) {
 		$_SESSION['login_email'] = $_POST['email'];
 		$_SESSION['password'] = $password;
-		?><script type="text/javascript">window.location.href='http://192.168.56.2/f32ee/Project_Latest/bookings.php'; </script>
+		?><script type="text/javascript">window.location.href='http://192.168.56.2/f32ee/Project/bookings.php'; </script>
 		<?php
 	} else {
 ?><script type="text/javascript">alert("No account found with the entered email and password!\n" + "Kindly re-enter password or try logging in with another email");</script>
@@ -54,7 +55,7 @@ if ($_POST["booking_check"]){
                               <img src="images/logo-image.png" class="img-fluid">
                         </div>
                   </a>
-                    <li><a href="home.html">Home</a>&nbsp;</li>
+                    <li><a href="index.html">Home</a>&nbsp;</li>
 				    <li><a href="plays.html">Plays</a>&nbsp;<li>
 				    <li><a href="contact.html">Contact Us</a>&nbsp;</li>
             
@@ -73,14 +74,14 @@ if ($_POST["booking_check"]){
 			<div id="headingtext">
 				GET ALL YOUR <br>BOOKING HISTORY HERE!<p>Simply login using your account!</p>
 				<div id="content">
-					<img src="images/pastbookings.png" width=450px height=450px align="left" hspace="60px" style="margin-left:220px;">
+					<img src="images/pastbookings.png" width=300px height=300px align="left" hspace="60px" style="margin-left:400px;">
 					<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" id="retrieve_bookingform">
-						<label for="name">Name:</label><br>
+						<!-- <label for="name">Name:</label><br>
 						<input type="text" name="name" id="login_name" required style="height: 30px;width :450px;"></input>
 						<br><br>
 						<label for="phone">Phone Number:</label><br>
 						<input type="text" name="phone" id="login_phone" required style="height: 30px;width :450px;"></input>
-						<br><br>
+						<br><br> -->
 						<label for="email">Email:</label><br>
 						<input type="email" name="email" id="login_email" required style="height: 30px;width :450px;"></input>
 						<br><br>

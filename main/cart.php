@@ -61,14 +61,15 @@ unset ($_GET['empty']);
 
 if ($_POST["login"]){
 	$password = md5(trim($_POST['old_password']));
+	$cust_email = strtolower($_POST['cust_email']);
 	#echo $password;
-	$login_query = "SELECT * FROM customers WHERE email='".trim($_POST['cust_email'])."'and password='".$password."'";
+	$login_query = "SELECT * FROM customers WHERE email='".trim($cust_email)."'and password='".$password."'";
 	$login_query_result = $db->query($login_query);
 	$login_query_num_results = $login_query_result->num_rows;
 	if ($login_query_num_results > 0) {
 		?><script type="text/javascript">alert("Thank you for your details! Your booking is confirmed.\n" + "You will now be redirected to confirmation page!");</script>
 <?php
-		$customer_query = "SELECT * FROM customers WHERE email='".trim($_POST['cust_email'])."'";
+		$customer_query = "SELECT * FROM customers WHERE email='".trim($cust_email)."'";
 		$customer_query_result = $db->query($customer_query);
 		$customer_row=mysqli_fetch_assoc($customer_query_result);
 		$customerid = (int)$customer_row['customerid'];
@@ -86,7 +87,7 @@ if ($_POST["login"]){
 			$order_query_result = $db->query($order_query);
 		}
 
-		?><script type="text/javascript">window.location.href='http://192.168.56.2/f32ee/Project_Latest/confirmation.php'; </script>
+		?><script type="text/javascript">window.location.href='http://192.168.56.2/f32ee/Project/confirmation.php'; </script>
 		<?php
 	} else {
 ?><script type="text/javascript">alert("No account found with the entered email and password!\n" + "Kindly create an account or re-enter password");</script>
@@ -96,20 +97,21 @@ if ($_POST["login"]){
 
 if ($_POST["new_account"]){
 	$password = md5(trim($_POST['new_password']));
-	$login_query = "SELECT * FROM customers WHERE email='".trim($_POST['cust_email'])."'";
+	$cust_email = strtolower($_POST['cust_email']);
+	$login_query = "SELECT * FROM customers WHERE email='".trim($cust_email)."'";
 	$login_query_result = $db->query($login_query);
 	$login_query_num_results = $login_query_result->num_rows;
 	if ($login_query_num_results > 0) {
 		?><script type="text/javascript">alert("An account with the given email exists!\n" + "Kindly login using previously entered password or create an account with different email");</script>
 		<?php
 	}else {	
-		$new_account_query = "INSERT into customers (name, phone, email, password) values ('".trim($_POST['cust_name'])."', '".trim($_POST['cust_phone'])."', '".trim($_POST['cust_email'])."', '".$password."');";
+		$new_account_query = "INSERT into customers (name, phone, email, password) values ('".trim($_POST['cust_name'])."', '".trim($_POST['cust_phone'])."', '".trim($cust_email)."', '".$password."');";
 		$new_account_query_result = $db->query($new_account_query);
 		if ($new_account_query_result) {
 			?><script type="text/javascript">alert("Thank you for your details! An account has been created using the details and a confirmation email has been sent. Your booking has been confirmed.\n" + "You will now be redirected to confirmation page!");</script>
 <?php		
 			
-			$customer_query = "SELECT * FROM customers WHERE email='".trim($_POST['cust_email'])."'";
+			$customer_query = "SELECT * FROM customers WHERE email='".trim($cust_email)."'";
 			$customer_query_result = $db->query($customer_query);
 			$customer_row=mysqli_fetch_assoc($customer_query_result);
 			$customerid = (int)$customer_row['customerid'];
@@ -141,7 +143,7 @@ $headers = 'From: f32ee@localhost' . "\r\n" .
     'Reply-To: f32ee@localhost' . "\r\n" .
     'X-Mailer: PHP/' . phpversion();
 mail($to, $subject, $message, $headers,'-ff32ee@localhost');			
-			?><script type="text/javascript">window.location.href='http://192.168.56.2/f32ee/Project_Latest/confirmation.php'; </script>
+			?><script type="text/javascript">window.location.href='http://192.168.56.2/f32ee/Project/confirmation.php'; </script>
 			<?php
 		
 		}
@@ -306,7 +308,7 @@ mail($to, $subject, $message, $headers,'-ff32ee@localhost');
                               <img src="images/logo-image.png" class="img-fluid">
                         </div>
                   </a>
-                    <li><a href="home.html">Home</a>&nbsp;</li>
+                    <li><a href="index.html">Home</a>&nbsp;</li>
 				    <li><a href="plays.html">Plays</a>&nbsp;<li>
 				    <li><a href="contact.html">Contact Us</a>&nbsp;</li>
             

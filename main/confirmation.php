@@ -163,11 +163,11 @@ $headers = 'From: f32ee@localhost' . "\r\n" .
                               <img src="images/logo-image.png" class="img-fluid">
                         </div>
                   </a>
-                    <li><a class="active" href="home.html">Home</a>&nbsp;</li>
+                    <li><a href="index.html">Home</a>&nbsp;</li>
 				    <li><a href="plays.html">Plays</a>&nbsp;<li>
 				    <li><a href="contact.html">Contact Us</a>&nbsp;</li>
             
-                    <a style="float:right" href="confirmation.html">
+                    <a style="float:right" href="cart.php">
                         <div class="cart-image">
                               <img src="images/cart-image.png" class="img-fluid">
                         </div>
@@ -244,7 +244,7 @@ The BlackSheep Theatre Company";
 				?>
             </div>
             <div class="back-button">
-                <button type="button" class="button"><a href="home.html">Back To Home</a></button>
+                <button type="button" class="button"><a href="index.html">Back To Home</a></button>
             </div>
             <footer>
                 <a style="float:left" href="#">
@@ -279,4 +279,4 @@ The BlackSheep Theatre Company";
             </footer>
     </body>
 </html>
-<?php #unset ($_SESSION["cart_item"]); ?>
+<?php unset ($_SESSION["cart_item"]); ?>

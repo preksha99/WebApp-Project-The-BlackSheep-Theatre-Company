@@ -4,11 +4,11 @@ function validateForm() {
 	var phone_regex = new RegExp(/^[+]{0,1}[0-9]{8,10}$/,'i');
 	var pwd_regex = new RegExp(/^[a-zA-Z0-9]{8,16}$/, 'i');
 	
-	var nameNode = document.getElementById("login_name");
+	#var nameNode = document.getElementById("login_name");
     var emailNode = document.getElementById("login_email");
-	var phoneNode = document.getElementById("login_phone");
+	#var phoneNode = document.getElementById("login_phone");
 	var passwordNode = document.getElementById("password");
-	
+	/*
 	var name_test = name_regex.test(nameNode.value);
 	if (name_test == false) {
     alert("The name entered (\"" + nameNode.value+ "\") contains invalid characters. \n"+
@@ -27,7 +27,7 @@ function validateForm() {
     phoneNode.select();
 	return false;
 	}
-	
+	*/
 	var email_test = email_regex.test(emailNode.value);
 	if (email_test == false) {
     alert("The email entered (\"" + emailNode.value + 

@@ -48,10 +48,10 @@ $customer_id = $customer_row["customerid"];
           }
           .booking-details {
               width: 1000px;
-              height: 1100px;
+              /*height: 1100px;*/
               background-color: white;
               margin-left: 230px;
-              margin-bottom: 40px;
+              margin-bottom: 100px;
           }
           .booking-details #statement{
               font-family: Montserrat-SemiBold;
@@ -145,11 +145,11 @@ $customer_id = $customer_row["customerid"];
                               <img src="images/logo-image.png" class="img-fluid">
                         </div>
                   </a>
-                    <li><a href="home.html">Home</a>&nbsp;</li>
+                    <li><a href="index.html">Home</a>&nbsp;</li>
 				    <li><a href="plays.html">Plays</a>&nbsp;<li>
 				    <li><a href="contact.html">Contact Us</a>&nbsp;</li>
             
-                    <a style="float:right" href="confirmation.html">
+                    <a style="float:right" href="cart.php">
                         <div class="cart-image">
                               <img src="images/cart-image.png" class="img-fluid">
                         </div>
@@ -169,6 +169,7 @@ $customer_id = $customer_row["customerid"];
 					<?php $bookings_query = "SELECT * FROM bookings WHERE customerid=".$customer_id.";";
 						$bookings_query_result = $db->query($bookings_query);
 						$bookings_query_num_results = $bookings_query_result->num_rows;
+						
 						while($row=mysqli_fetch_assoc($bookings_query_result)) {
 							$bookings_set[] = $row;
 						}
@@ -223,12 +224,11 @@ $customer_id = $customer_row["customerid"];
                         </p>
                     </div>
                 </div>
-                <?php } ?>
-
-            </div>
+			<?php }?>	
+			</div>
 			<div class="back-button">
-                <button type="button" class="button"><a href="home.html">Back To Home</a></button>
-            </div>
+                <button type="button" class="button"><a href="index.html">Back To Home</a></button>
+            </div>	
             <footer>
                 <a style="float:left" href="#">
                     <div class="logo-image-round">
