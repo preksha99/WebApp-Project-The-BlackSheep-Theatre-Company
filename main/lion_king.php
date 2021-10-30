@@ -361,17 +361,17 @@ unset ($_POST["buy"]);
         <div class = "playDescription">
             <div class="row">
                 <div class="column left">
-                    <img src="images/chicago_image1.png" width=572px height=415px align="center">
+                    <img src="images/lionking_image1.png" width=572px height=415px align="center">
                     <br>
-                    <img src="images/chicago_image2.png" width=572px height=415px align="center">
+                    <img src="images/lionking_image2.png" width=572px height=415px align="center">
                 </div>
                 <div class="column right" >
                   <div id="synopsis">
                     <p id="genre">Musical, Fantasy</p>
                     <p id="heading">The Lion King</p>
                     <p id="details"><span id="category">Director:</span> Julie Taymor</p>
-                    <p id="details"><span id="category">Writers:</span> Bob Fosse, Fred Ebb</p>
-                    <p id="details"><span id="category">Starring:</span> Bianca Marroquín, Ana Villafañe, Paulo Szot</p>
+                    <p id="details"><span id="category">Writers:</span> Roger Allers, Irene Mecchi</p>
+                    <p id="details"><span id="category">Starring:</span> Brandon A. McCall, Adrienne Walker, Ben Jeffrey</p>
                     <p id="details"><span id="category">Dates:</span> 16 - 19 November 2021</p>
                     <p id="details"><span id="category">Location:</span> Esplanade Theatre</p>
                     <p id="details"><span id="category">Language:</span> English</p>
@@ -379,7 +379,7 @@ unset ($_POST["buy"]);
                   </div>
                   <div id="space"></div>
                   <div id="synopsis">
-                    <p id="details">Nightclub sensation Velma (Bianca Marroquín) murders her philandering husband, and Chicago's slickest lawyer, Billy Flynn (Paulo Szot), is set to defend her. But when Roxie (Ana Villafañe) also winds up in prison, Billy takes on her case as well -- turning her into a media circus of headlines. Neither woman will be outdone in their fight against each other and the public for fame and celebrity.</p>
+                    <p id="details">A lively stage adaptation of the Academy Award-winning 1994 Disney film, The Lion King is the story of a young lion prince living in the flourishing African Pride Lands. When an unthinkable tragedy, orchestrated by Simba’s wicked uncle, Scar, takes his father’s life, Simba flees the Pride Lands, leaving his loss and the life he knew behind. Eventually companioned by two hilarious and unlikely friends, Simba starts anew. But when weight of responsibility and a desperate plea from the now ravaged Pride Lands come to find the adult prince, Simba must take on a formidable enemy, and fulfill his destiny to be king.</p>
                   </div>
                   <button type="button" class="button"><a href="#A">Get Tickets</a></button>
                 </div>
@@ -391,21 +391,21 @@ unset ($_POST["buy"]);
                 <div class="review-column">
                     <img src="images/4stars.png" height=48px align="center">
                     <div id="review-box">
-                        <p id="review">“Ambitious, humane. A production of huge resourcefulness.”</p>
-                    <p id="byline">The Independent</p>
-                    </div>
-                </div>
-                <div class="review-column">
-                    <img src="images/5stars.png" height=48px align="center">
-                    <div id="review-box">
-                        <p id="review">“Urgent and important.”</p>
-                    <p id="byline">Evening Standard</p>
+                        <p id="review">"The breathtakingly staged Broadway adaptation of Disney's king of the cartoon jungle is an instant theater classic.”</p>
+                    <p id="byline">Entertainment Weekly</p>
                     </div>
                 </div>
                 <div class="review-column">
                     <img src="images/4stars.png" height=48px align="center">
                     <div id="review-box">
-                        <p id="review">“Intense visual poetry and a powerful emotional undertow.”</p>
+                        <p id="review">“Awe-inspiring! Broadway theater is alive again.”</p>
+                    <p id="byline">Time Magazine</p>
+                    </div>
+                </div>
+                <div class="review-column">
+                    <img src="images/5stars.png" height=48px align="center">
+                    <div id="review-box">
+                        <p id="review">“The show appeals to our primal, childlike excitement in the power of theater to make us see things afresh.”</p>
                     <p id="byline">The New York Times</p>
                     </div>
                 </div>

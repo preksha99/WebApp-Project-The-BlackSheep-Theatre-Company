@@ -361,17 +361,17 @@ unset ($_POST["buy"]);
         <div class = "playDescription">
             <div class="row">
                 <div class="column left">
-                    <img src="images/chicago_image1.png" width=572px height=415px align="center">
+                    <img src="images/opera_image1.png" width=572px height=415px align="center">
                     <br>
-                    <img src="images/chicago_image2.png" width=572px height=415px align="center">
+                    <img src="images/opera_image2.png" width=572px height=415px align="center">
                 </div>
                 <div class="column right" >
                   <div id="synopsis">
                     <p id="genre">Musical, Gothic Fiction</p>
                     <p id="heading">The Phantom of the Opera</p>
                     <p id="details"><span id="category">Director:</span> Joel Schumacher</p>
-                    <p id="details"><span id="category">Writers:</span> Bob Fosse, Fred Ebb</p>
-                    <p id="details"><span id="category">Starring:</span> Bianca Marroquín, Ana Villafañe, Paulo Szot</p>
+                    <p id="details"><span id="category">Writers:</span> Richard Stilgoe, Andrew Lloyd Webber</p>
+                    <p id="details"><span id="category">Starring:</span> Gerard Butler, Emmy Rossum, Patrick Wilson</p>
                     <p id="details"><span id="category">Dates:</span> 11 - 14 November 2021</p>
                     <p id="details"><span id="category">Location:</span> Esplanade Theatre</p>
                     <p id="details"><span id="category">Language:</span> English</p>
@@ -379,7 +379,7 @@ unset ($_POST["buy"]);
                   </div>
                   <div id="space"></div>
                   <div id="synopsis">
-                    <p id="details">Nightclub sensation Velma (Bianca Marroquín) murders her philandering husband, and Chicago's slickest lawyer, Billy Flynn (Paulo Szot), is set to defend her. But when Roxie (Ana Villafañe) also winds up in prison, Billy takes on her case as well -- turning her into a media circus of headlines. Neither woman will be outdone in their fight against each other and the public for fame and celebrity.</p>
+                    <p id="details">Based on the 1910 horror novel by Gaston Leroux, The Phantom of the Opera is a thrilling and romantic account of the legendary Phantom, a musical genius who dwells deep beneath a majestic opera house in Paris. Shunned by society for his horrible facial deformity, he takes a promising young soprano, Christine, under his wing and grooms her for operatic fame, all the while falling deeply in love with her. As Christine grows ever more successful, and a handsome young man from her past begins to successfully court her, the Phantom descends into a jealous rage and terrorizes the opera company with increasingly dangerous threats. Phantom has gone on to become a cultural tour de force, and one of the most successful musicals of all time.</p>
                   </div>
                   <button type="button" class="button"><a href="#A">Get Tickets</a></button>
                 </div>
@@ -391,22 +391,22 @@ unset ($_POST["buy"]);
                 <div class="review-column">
                     <img src="images/4stars.png" height=48px align="center">
                     <div id="review-box">
-                        <p id="review">“Ambitious, humane. A production of huge resourcefulness.”</p>
-                    <p id="byline">The Independent</p>
+                        <p id="review">“A musical that will forever stand the test of time.”</p>
+                    <p id="byline">The Guardian</p>
                     </div>
                 </div>
                 <div class="review-column">
                     <img src="images/5stars.png" height=48px align="center">
                     <div id="review-box">
-                        <p id="review">“Urgent and important.”</p>
-                    <p id="byline">Evening Standard</p>
+                        <p id="review">“A timeless creation.”</p>
+                    <p id="byline">The New York Times</p>
                     </div>
                 </div>
                 <div class="review-column">
-                    <img src="images/4stars.png" height=48px align="center">
+                    <img src="images/3stars.png" height=48px align="center">
                     <div id="review-box">
-                        <p id="review">“Intense visual poetry and a powerful emotional undertow.”</p>
-                    <p id="byline">The New York Times</p>
+                        <p id="review">“A visual masterpiece.”</p>
+                    <p id="byline">The Straits Times</p>
                     </div>
                 </div>
             </div>

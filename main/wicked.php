@@ -361,25 +361,25 @@ unset ($_POST["buy"]);
         <div class = "playDescription">
             <div class="row">
                 <div class="column left">
-                    <img src="images/chicago_image1.png" width=572px height=415px align="center">
+                    <img src="images/wicked_image1.png" width=572px height=415px align="center">
                     <br>
-                    <img src="images/chicago_image2.png" width=572px height=415px align="center">
+                    <img src="images/wicked_image2.png" width=572px height=415px align="center">
                 </div>
                 <div class="column right" >
                   <div id="synopsis">
                     <p id="genre">Musical, Fantasy</p>
                     <p id="heading">Wicked</p>
                     <p id="details"><span id="category">Director:</span> Joe Mantello</p>
-                    <p id="details"><span id="category">Writers:</span> Bob Fosse, Fred Ebb</p>
-                    <p id="details"><span id="category">Starring:</span> Bianca Marroquín, Ana Villafañe, Paulo Szot</p>
+                    <p id="details"><span id="category">Writers:</span> Winnie Holzman</p>
+                    <p id="details"><span id="category">Starring:</span> Laura Pick, Sophie Evans, Alistair Brammer</p>
                     <p id="details"><span id="category">Dates:</span> 25 - 28 November 2021</p>
                     <p id="details"><span id="category">Location:</span> Esplanade Theatre</p>
                     <p id="details"><span id="category">Language:</span> English</p>
-                    <p id="details"><span id="category">Running Time:</span> 150 minutes</p>
+                    <p id="details"><span id="category">Running Time:</span> 165 minutes</p>
                   </div>
                   <div id="space"></div>
                   <div id="synopsis">
-                    <p id="details">Nightclub sensation Velma (Bianca Marroquín) murders her philandering husband, and Chicago's slickest lawyer, Billy Flynn (Paulo Szot), is set to defend her. But when Roxie (Ana Villafañe) also winds up in prison, Billy takes on her case as well -- turning her into a media circus of headlines. Neither woman will be outdone in their fight against each other and the public for fame and celebrity.</p>
+                    <p id="details">Stephen Schwartz’s Wicked: The Untold Story of the Witches of Oz takes place before L.Frank Baum’s classic Wizard of Oz story ever began. Before Dorothy was even alive, two young girls met in the Land of Oz, became rivals, and then friends. One was born with emerald green skin, with a brilliant mind and a fiery spirit. The other was classically beautiful, with great ambition and incredible drive. The green-skinned Elphaba was ostracized by her family and by everyone at school. The beautiful Galinda was destined to be forever popular. Over the course of Wicked, we discover how these two young women became rivals and then the closest of friends – and how they ended up as the Wicked Witch of the West and Glinda the Good.</p>
                   </div>
                   <button type="button" class="button"><a href="#A">Get Tickets</a></button>
                 </div>
@@ -391,21 +391,21 @@ unset ($_POST["buy"]);
                 <div class="review-column">
                     <img src="images/4stars.png" height=48px align="center">
                     <div id="review-box">
-                        <p id="review">“Ambitious, humane. A production of huge resourcefulness.”</p>
-                    <p id="byline">The Independent</p>
+                        <p id="review">“A major hit with audiences and critics alike, Wicked is an amazing success!”</p>
+                    <p id="byline">BBC London</p>
                     </div>
                 </div>
                 <div class="review-column">
                     <img src="images/5stars.png" height=48px align="center">
                     <div id="review-box">
-                        <p id="review">“Urgent and important.”</p>
+                        <p id="review">"The most complete, and completely satisfying, musical I've come across in a long time.”</p>
                     <p id="byline">Evening Standard</p>
                     </div>
                 </div>
                 <div class="review-column">
-                    <img src="images/4stars.png" height=48px align="center">
+                    <img src="images/5stars.png" height=48px align="center">
                     <div id="review-box">
-                        <p id="review">“Intense visual poetry and a powerful emotional undertow.”</p>
+                        <p id="review">“Packed with spectacular coups de theatre and magical effects.”</p>
                     <p id="byline">The New York Times</p>
                     </div>
                 </div>

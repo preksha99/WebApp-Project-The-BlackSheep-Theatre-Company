@@ -361,25 +361,25 @@ unset ($_POST["buy"]);
         <div class = "playDescription">
             <div class="row">
                 <div class="column left">
-                    <img src="images/chicago_image1.png" width=572px height=415px align="center">
+                    <img src="images/hamilton_image1.png" width=572px height=415px align="center">
                     <br>
-                    <img src="images/chicago_image2.png" width=572px height=415px align="center">
+                    <img src="images/hamilton_image2.png" width=572px height=415px align="center">
                 </div>
                 <div class="column right" >
                   <div id="synopsis">
                     <p id="genre">Musical, Drama</p>
                     <p id="heading">Hamilton</p>
                     <p id="details"><span id="category">Director:</span> Alex Lacamoire</p>
-                    <p id="details"><span id="category">Writers:</span> Bob Fosse, Fred Ebb</p>
-                    <p id="details"><span id="category">Starring:</span> Bianca Marroquín, Ana Villafañe, Paulo Szot</p>
+                    <p id="details"><span id="category">Writers:</span> Lin-Manuel Miranda</p>
+                    <p id="details"><span id="category">Starring:</span> Lin-Manuel Miranda, Daveed Diggs, Leslie Odom Jr.</p>
                     <p id="details"><span id="category">Dates:</span> 1 - 4 November 2021</p>
                     <p id="details"><span id="category">Location:</span> Esplanade Theatre</p>
                     <p id="details"><span id="category">Language:</span> English</p>
-                    <p id="details"><span id="category">Running Time:</span> 150 minutes</p>
+                    <p id="details"><span id="category">Running Time:</span> 160 minutes</p>
                   </div>
                   <div id="space"></div>
                   <div id="synopsis">
-                    <p id="details">Nightclub sensation Velma (Bianca Marroquín) murders her philandering husband, and Chicago's slickest lawyer, Billy Flynn (Paulo Szot), is set to defend her. But when Roxie (Ana Villafañe) also winds up in prison, Billy takes on her case as well -- turning her into a media circus of headlines. Neither woman will be outdone in their fight against each other and the public for fame and celebrity.</p>
+                    <p id="details">Lin-Manuel Miranda's Pulitzer prize-winning transformation of Ron Chernow's biography, Hamilton, into a hip-hop musical took the world by storm. At the center of this groundbreaking multi-award-winning new musical is the story of founding father Alexander Hamilton, whose ambition drove him from the position of Caribbean outsider and bastard child to American war hero and George Washington's right-hand man. In the process, Alexander Hamilton powerfully shaped America as we have come to know it -- and gave us all a template for what it means to pull ourselves up by our bootstraps and realize the American Dream.</p>
                   </div>
                   <button type="button" class="button"><a href="#A">Get Tickets</a></button>
                 </div>
@@ -389,24 +389,24 @@ unset ($_POST["buy"]);
         <div class="reviews">
             <div class="row">
                 <div class="review-column">
-                    <img src="images/4stars.png" height=48px align="center">
+                    <img src="images/5stars.png" height=48px align="center">
                     <div id="review-box">
-                        <p id="review">“Ambitious, humane. A production of huge resourcefulness.”</p>
-                    <p id="byline">The Independent</p>
+                        <p id="review">“The most exciting and significant musical of the decade.”</p>
+                    <p id="byline">The New York Times</p>
                     </div>
                 </div>
                 <div class="review-column">
                     <img src="images/5stars.png" height=48px align="center">
                     <div id="review-box">
-                        <p id="review">“Urgent and important.”</p>
-                    <p id="byline">Evening Standard</p>
+                        <p id="review">“Hamilton is making musical history.”</p>
+                    <p id="byline">The Guardian</p>
                     </div>
                 </div>
                 <div class="review-column">
-                    <img src="images/4stars.png" height=48px align="center">
+                    <img src="images/5stars.png" height=48px align="center">
                     <div id="review-box">
-                        <p id="review">“Intense visual poetry and a powerful emotional undertow.”</p>
-                    <p id="byline">The New York Times</p>
+                        <p id="review">“A revolution on stage.”</p>
+                    <p id="byline">The Associated Press</p>
                     </div>
                 </div>
             </div>

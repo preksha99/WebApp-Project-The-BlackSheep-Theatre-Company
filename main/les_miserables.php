@@ -361,25 +361,25 @@ unset ($_POST["buy"]);
         <div class = "playDescription">
             <div class="row">
                 <div class="column left">
-                    <img src="images/chicago_image1.png" width=572px height=415px align="center">
+                    <img src="images/lesmiserables_image1.png" width=572px height=415px align="center">
                     <br>
-                    <img src="images/chicago_image2.png" width=572px height=415px align="center">
+                    <img src="images/lesmiserables_image2.png" width=572px height=415px align="center">
                 </div>
                 <div class="column right" >
                   <div id="synopsis">
                     <p id="genre">Tragedy, Historical Fiction</p>
-                    <p id="heading">Les Miserables</p>
+                    <p id="heading">Les Misérables</p>
                     <p id="details"><span id="category">Director:</span> Trevor Nunn</p>
-                    <p id="details"><span id="category">Writers:</span> Bob Fosse, Fred Ebb</p>
-                    <p id="details"><span id="category">Starring:</span> Bianca Marroquín, Ana Villafañe, Paulo Szot</p>
+                    <p id="details"><span id="category">Writers:</span> William Nicholson, Alain Boublil, Claude-Michel Schönberg</p>
+                    <p id="details"><span id="category">Starring:</span> Colm Wilkinson, Terrence Mann, Randy Graff</p>
                     <p id="details"><span id="category">Dates:</span> 20 - 23 November 2021</p>
                     <p id="details"><span id="category">Location:</span> Esplanade Theatre</p>
                     <p id="details"><span id="category">Language:</span> English</p>
-                    <p id="details"><span id="category">Running Time:</span> 150 minutes</p>
+                    <p id="details"><span id="category">Running Time:</span> 158 minutes</p>
                   </div>
                   <div id="space"></div>
                   <div id="synopsis">
-                    <p id="details">Nightclub sensation Velma (Bianca Marroquín) murders her philandering husband, and Chicago's slickest lawyer, Billy Flynn (Paulo Szot), is set to defend her. But when Roxie (Ana Villafañe) also winds up in prison, Billy takes on her case as well -- turning her into a media circus of headlines. Neither woman will be outdone in their fight against each other and the public for fame and celebrity.</p>
+                    <p id="details">One of the world’s most iconic and longest-running musicals, Les Misérables tells the story of Jean Valjean, a former convict who spends a lifetime seeking redemption. Set against the backdrop of 19th-century France and the aftermath of the French Revolution, this timeless story of intertwined destinies reveals the power of compassion and the quiet evil of indifference to human suffering. As Valjean’s quest for a new life carries him into Paris and to the barricades of the Student Revolution, he is hunted by Inspector Javert and the ghosts of his past. Amidst a battle for the soul of Paris, he discovers the true meaning of love and salvation.</p>
                   </div>
                   <button type="button" class="button"><a href="#A">Get Tickets</a></button>
                 </div>
@@ -391,22 +391,22 @@ unset ($_POST["buy"]);
                 <div class="review-column">
                     <img src="images/4stars.png" height=48px align="center">
                     <div id="review-box">
-                        <p id="review">“Ambitious, humane. A production of huge resourcefulness.”</p>
-                    <p id="byline">The Independent</p>
+                        <p id="review">“Les Misérables breathes life and relatibility to its modern audience.”</p>
+                    <p id="byline">The Gateway</p>
                     </div>
                 </div>
                 <div class="review-column">
                     <img src="images/5stars.png" height=48px align="center">
                     <div id="review-box">
-                        <p id="review">“Urgent and important.”</p>
-                    <p id="byline">Evening Standard</p>
+                        <p id="review">“In theatrical terms, Les Misérables is a venerable institution.”</p>
+                    <p id="byline">British Broadcasting Corporation (BBC)</p>
                     </div>
                 </div>
                 <div class="review-column">
                     <img src="images/4stars.png" height=48px align="center">
                     <div id="review-box">
-                        <p id="review">“Intense visual poetry and a powerful emotional undertow.”</p>
-                    <p id="byline">The New York Times</p>
+                        <p id="review">“A creative reimagination of an iconic musical.”</p>
+                    <p id="byline">The British Times</p>
                     </div>
                 </div>
             </div>
