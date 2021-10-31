@@ -156,7 +156,7 @@ $customer_id = $customer_row["customerid"];
                 </ul>
             </nav>
 			<div class="confirmation-header">
-                <p><span class="congrats"><?php echo "Welcome ".$customer_name; ?></span><br>Here is your booking history till <?php echo $date; ?></p>
+                <p><span class="congrats"><?php echo "WELCOME ".$customer_name; ?></span><br>Here is your booking history till <?php echo $date; ?></p>
             </div>
             <div class="booking-details">
                 <br><br>

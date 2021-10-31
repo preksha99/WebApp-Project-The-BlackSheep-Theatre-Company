@@ -59,8 +59,9 @@ mail($to, $subject_admin, $message_admin, $headers,'-ff32ee@localhost');
                 </ul>
             </nav>
 			<div id="headingtext">
-				<p style="font size: 30px;">Thank you for contacting us! We will reach out to you within 1-2 days.</p><br>
-				<img src="images/thankyou.jpg" width=600px height=382px style="margin-left:auto;">
+				<img src="images/thankyou.png" width=600px height=382px style="margin-left:auto;">
+				<p style="font size: 30px;">We will reach out to you within 1-2 days.</p><br>
+
 			</div>
 			<br><br><br><br>
             <footer>
