@@ -10,17 +10,13 @@ if (!isset($_SESSION))  {
 	if (!isset($_SESSION['cart_item'])){
 		$_SESSION['cart_item'] = array();
 	}
-	#unset($_SESSION["cart_item"]);
-	#var_dump($_SESSION);
 }
 $id = session_id();
-#echo "<br>Session id = $id <br>";
 
 if (isset($_POST["buy"])) {
 	$itemArray = array("showid"=>$_POST["showid"], "scheduleid"=>$_POST["scheduleid"], "quantity_area1"=>$_POST['quantity_area1'], 
 	"quantity_area2"=>$_POST['quantity_area2'], "quantity_area3"=>$_POST['quantity_area3'], "quantity_area4"=>$_POST['quantity_area4']);
 	
-	#var_dump ($itemArray);
 	if (($_POST['quantity_area1']==0)&&($_POST['quantity_area2']==0)&&($_POST['quantity_area3']==0)&&($_POST['quantity_area4']==0)) {
 		$all_zero = true;
 	}
@@ -75,17 +71,9 @@ if (isset($_POST["buy"])) {
 			<?php
 		}
 	}
-	#echo '<pre>'.print_r($_SESSION, TRUE).'</pre>';
-
-	#$update_query = "UPDATE schedule SET quantity_area1 = quantity_area1-".$itemArray["quantity_area1"].", quantity_area2 = quantity_area2-".$itemArray["quantity_area2"].", 
-	#quantity_area3 = quantity_area3-".$itemArray["quantity_area3"].", quantity_area4= quantity_area4-".$itemArray["quantity_area4"]." WHERE showid=".$_POST["showid"]. " and scheduleid=".$_POST["scheduleid"].";";
-	#$update_result = $db->query($update_query);
-
-	
 	$retrieval_query = "SELECT * FROM schedule WHERE showid=".$_POST["showid"]. " and scheduleid=".$_POST["scheduleid"];
 	$retrieval_result = $db->query($retrieval_query);
 	$retrieved_row=mysqli_fetch_assoc($retrieval_result);
-	#echo '<pre>'; print_r($retrieved_row); echo '</pre>';
 	
 }
 unset ($_POST["buy"]);
@@ -119,22 +107,22 @@ unset ($_POST["buy"]);
             }
 
             .right #genre {
-                font-family: Montserrat-SemiBold;
+            font-family: Montserrat-SemiBold;
 			font-size: 20px;
 			text-decoration: none; 
             }
             .right #heading {
-                font-family: Montserrat-Bold;
+            font-family: Montserrat-Bold;
 			font-size: 50px;
 			text-decoration: none; 
             }
             .right #details {
-                font-family: Montserrat-Medium;
+            font-family: Montserrat-Medium;
 			font-size: 20px;
 			text-decoration: none; 
             }
             .right #category {
-                font-family: Montserrat-Bold;
+            font-family: Montserrat-Bold;
 			font-size: 20px;
 			text-decoration: none;
             }
@@ -149,51 +137,49 @@ unset ($_POST["buy"]);
             }
 
             .button {
-                margin-left: 15px;
-                margin-top: 40px;
-                background-color: #292121;
-                width:230px;
-                height:50px;
+            margin-left: 15px;
+            margin-top: 40px;
+            background-color: #292121;
+            width:230px;
+            height:50px;
             }
             .button a {
-                font-family: Montserrat-SemiBold;
-                font-style: inherit;
-                text-decoration: none;
-                /* font-weight: 550; */
-                font-size: 23px;
-                /* line-height: 28px; */
-                text-align: center;
-                color: #FFFFFF;
+            font-family: Montserrat-SemiBold;
+            font-style: inherit;
+            text-decoration: none;
+            font-size: 23px;
+            text-align: center;
+            color: #FFFFFF;
             }
 
             .reviews{
-                background-color: #292121;
-                width: screen;
-                height: 390px;
+            background-color: #292121;
+            width: screen;
+            height: 390px;
             }
 
             .review-column{
-                flex: 33.33%;
+            flex: 33.33%;
             }
 
             .review-column img {
-                vertical-align: middle;
-                margin-left: 100px;
-                margin-top: 50px;
-                margin-bottom: 50px;
+            vertical-align: middle;
+            margin-left: 100px;
+            margin-top: 50px;
+            margin-bottom: 50px;
             }
 
             .review-column #review{
-                font-family: Montserrat-Regular;
-                margin-right: 45px;
+            font-family: Montserrat-Regular;
+            margin-right: 45px;
 			font-size: 20px;
 			font-style: italic;
             text-align: center;
             color: #FFFFFF;
             }
             .review-column #byline {
-                font-family: Montserrat-Bold;
-                margin-right: 45px;
+            font-family: Montserrat-Bold;
+            margin-right: 45px;
 			font-size: 20px;
 			font-style: italic;
             text-align: center;
@@ -210,8 +196,8 @@ unset ($_POST["buy"]);
                 align-items: center;
             }
             .seating-chart #seating {
-                font-family: Montserrat-SemiBold;
-                margin-top: 40px;
+            font-family: Montserrat-SemiBold;
+            margin-top: 40px;
 			font-size: 30px;
             text-align: center;
             }
@@ -228,18 +214,16 @@ unset ($_POST["buy"]);
             }
 
             .tickets #available {
-                font-family: Montserrat-SemiBold;
-                margin-left: 60px;
+            font-family: Montserrat-SemiBold;
+            margin-left: 60px;
 			font-size: 22px;
             text-align: left;
             }
 
             .ticket-card {
                 background-color: white;
-                /* width: screen; */
                 height: 165px;
                 margin-bottom: 40px;
-                /* align-items: center; */
             }
 
             .ticket-card-header {
@@ -258,7 +242,6 @@ unset ($_POST["buy"]);
             .ticket-card #time {
                 font-family: Montserrat-SemiBold;
                 font-size: 20px;
-                /* text-align: center; */
                 margin-left: 55px;
                 padding-top: 10px;
             }
@@ -276,9 +259,7 @@ unset ($_POST["buy"]);
                 font-family: Montserrat-SemiBold;
                 font-style: inherit;
                 text-decoration: none;
-                /* font-weight: 550; */
                 font-size: 15px;
-                /* line-height: 28px; */
                 text-align: center;
                 color: #FFFFFF;
             }
@@ -292,9 +273,7 @@ unset ($_POST["buy"]);
             .price-qty label {
                 font-family: Montserrat-SemiBold;
                 text-decoration: none;
-                /* font-weight: 550; */
                 font-size: 17px;
-                /* line-height: 28px; */
                 text-align: center;
                 margin-right: 20px;
             }
@@ -307,7 +286,6 @@ unset ($_POST["buy"]);
                 text-align: center;
                 font-family: Montserrat-SemiBold;
                 text-decoration: none;
-                /* font-weight: 550; */
                 font-size: 13px;
             }
 
@@ -324,9 +302,7 @@ unset ($_POST["buy"]);
                 font-family: Montserrat-SemiBold;
                 font-style: inherit;
                 text-decoration: none;
-                /* font-weight: 550; */
                 font-size: 23px;
-                /* line-height: 28px; */
                 text-align: center;
                 color: #FFFFFF;
             }

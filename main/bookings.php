@@ -10,17 +10,14 @@ if (!isset($_SESSION))  {
 	if (!isset($_SESSION['cart_item'])){
 		$_SESSION['cart_item'] = array();
 	}
-	#var_dump($_SESSION);
 }
 $date = date('Y-m-d');
 $id = session_id();
-#echo "<br>Session id = $id <br>";
 
 $customer_query = "SELECT * FROM customers WHERE email='".trim($_SESSION['login_email'])."';";
 $customer_query_result = $db->query($customer_query);
 $customer_query_num_results = $customer_query_result->num_rows;
 $customer_row=mysqli_fetch_assoc($customer_query_result);
-#var_dump($customer_row);
 $customer_name = $customer_row["name"];
 $customer_id = $customer_row["customerid"];
 
@@ -48,7 +45,6 @@ $customer_id = $customer_row["customerid"];
           }
           .booking-details {
               width: 1000px;
-              /*height: 1100px;*/
               background-color: white;
               margin-left: 230px;
               margin-bottom: 100px;
@@ -124,9 +120,7 @@ $customer_id = $customer_row["customerid"];
                 font-family: Montserrat-SemiBold;
                 font-style: inherit;
                 text-decoration: none;
-                /* font-weight: 550; */
                 font-size: 23px;
-                /* line-height: 28px; */
                 text-align: center;
                 color: #FFFFFF;
             }
@@ -173,21 +167,16 @@ $customer_id = $customer_row["customerid"];
 						while($row=mysqli_fetch_assoc($bookings_query_result)) {
 							$bookings_set[] = $row;
 						}
-						#var_dump($bookings_set);
 						
 						for ($j=0; $j<count($bookings_set); $j++) {
-							#var_dump($bookings_set[$j]);
 							$showid = $bookings_set[$j]["showid"];
-							#echo $showid."<br>";
 							$scheduleid = $bookings_set[$j]["scheduleid"];
-							#echo $scheduleid."<br>";
 							
 							$shows_query = "SELECT * FROM shows WHERE showid=".$showid.";";
 							$shows_result = $db->query($shows_query);
 							$show_row = mysqli_fetch_assoc($shows_result);
 							$show_name = $show_row["name"];
 							$show_img = $show_row["images"];
-							#echo $show_name."<br>";
 							
 							$schedule_query = "SELECT * FROM schedule where scheduleid=".$scheduleid.";";
 							$schedule_result = $db->query($schedule_query);

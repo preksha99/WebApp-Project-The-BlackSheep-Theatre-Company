@@ -10,19 +10,15 @@ if (!isset($_SESSION))  {
 	if (!isset($_SESSION['cart_item'])){
 		$_SESSION['cart_item'] = array();
 	}
-	#var_dump($_SESSION);
 }
 $id = session_id();
-#echo "<br>Session id = $id <br>";
 
 if ($_POST["booking_check"]){
 	$password = md5(trim($_POST['password']));
 	$email = strtolower($_POST['email']);
-	#echo $password;
 	$login_query = "SELECT * FROM customers WHERE email='".trim($email)."'and password='".$password."'";
 	$login_query_result = $db->query($login_query);
 	$login_query_num_results = $login_query_result->num_rows;
-	#echo $login_query_num_results;
 	if ($login_query_num_results > 0) {
 		$_SESSION['login_email'] = $_POST['email'];
 		$_SESSION['password'] = $password;

@@ -10,22 +10,17 @@ if (!isset($_SESSION))  {
 	if (!isset($_SESSION['cart_item'])){
 		$_SESSION['cart_item'] = array();
 	}
-	#unset($_SESSION["cart"]);
-	#var_dump($_SESSION);
+
 }
 $date = date('Y-m-d');
 $day = date('l');
-#echo $day;
-#echo $dates;
 
 $id = session_id();
-#echo "<br>Session id = $id <br>";
 
 $shows_query = "SELECT * FROM shows";
 $shows_result = $db->query($shows_query);
 $shows_num = $shows_result->num_rows;
 while($row=mysqli_fetch_assoc($shows_result)) {
-				#echo '<pre>'; print_r($row); echo '</pre>'; 
 				$shows_set[$row["showid"]] = $row;
 }
 
@@ -57,12 +52,10 @@ if ($_GET['empty']==1) {
 	unset ($_SESSION["cart_item"]); 
 }
 unset ($_GET['empty']);
-#echo '<pre>'.print_r($_SESSION, TRUE).'</pre>';
 
 if ($_POST["login"]){
 	$password = md5(trim($_POST['old_password']));
 	$cust_email = strtolower($_POST['cust_email']);
-	#echo $password;
 	$login_query = "SELECT * FROM customers WHERE email='".trim($cust_email)."'and password='".$password."'";
 	$login_query_result = $db->query($login_query);
 	$login_query_num_results = $login_query_result->num_rows;
@@ -73,9 +66,7 @@ if ($_POST["login"]){
 		$customer_query_result = $db->query($customer_query);
 		$customer_row=mysqli_fetch_assoc($customer_query_result);
 		$customerid = (int)$customer_row['customerid'];
-		#echo $customerid."<br>";
 		$_SESSION['customer_login_name'] = $customer_row['name'];
-		#echo ($_SESSION['customer_login_name']);
 		
 		for ($j=0; $j<count($_SESSION["cart_item"]); $j++){ 
 			$showid = $_SESSION["cart_item"][$j]["showid"];
@@ -224,9 +215,7 @@ mail($to, $subject, $message, $headers,'-ff32ee@localhost');
                 font-family: Montserrat-SemiBold;
                 font-style: inherit;
                 text-decoration: none;
-                /* font-weight: 550; */
                 font-size: 15px;
-                /* line-height: 28px; */
                 text-align: center;
                 color: #FFFFFF;
             }
@@ -286,9 +275,7 @@ mail($to, $subject, $message, $headers,'-ff32ee@localhost');
                 font-family: Montserrat-SemiBold;
                 font-style: inherit;
                 text-decoration: none;
-                /* font-weight: 550; */
                 font-size: 15px;
-                /* line-height: 28px; */
                 text-align: center;
                 color: #FFFFFF;
             }

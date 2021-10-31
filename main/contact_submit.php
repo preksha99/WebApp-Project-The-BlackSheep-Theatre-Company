@@ -1,8 +1,8 @@
 <?php 
-$j = 1;
 $to      = 'f32ee@localhost';
-$subject = 'Thank you for contacting The BlackSheep Theatre Company';
-$message = "Dear ".$_POST['name'].",
+$subject_cust = 'Thank you for contacting The BlackSheep Theatre Company';
+$subject_admin = 'Admin - New query recieved!';
+$message_cust = "Dear ".$_POST['name'].",
 Thank you for contacting The BlackSheep Theatre Company. 
 We will get back to you in 1-2 days at '".$_POST['email']."'. 
 We look forward to serving you soon.
@@ -10,12 +10,21 @@ We look forward to serving you soon.
 Best Regards,
 The BlackSheep Theatre Company";
 
+$message_admin = "Hi Admin, a new query has been recieved.
+
+Name: ".$_POST['name']."
+Phone: ".$_POST['phone']."
+Email: ".$_POST['email']."
+Query: ".$_POST['queries']."
+
+Kindly respond at the earliest!";
+
 $headers = 'From: f32ee@localhost' . "\r\n" .
     'Reply-To: f32ee@localhost' . "\r\n" .
     'X-Mailer: PHP/' . phpversion();
 
-mail($to, $subject, $message, $headers,'-ff32ee@localhost');
-#echo ("mail sent to : ".$to);
+mail($to, $subject_cust, $message_cust, $headers,'-ff32ee@localhost');
+mail($to, $subject_admin, $message_admin, $headers,'-ff32ee@localhost');
 ?>
 <!DOCTYPE html>
 <html lang="en">

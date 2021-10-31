@@ -11,17 +11,14 @@ if (!isset($_SESSION))  {
 	if (!isset($_SESSION['cart_item'])){
 		$_SESSION['cart_item'] = array();
 	}
-	#unset($_SESSION["cart"]);
-	#var_dump($_SESSION);
+
 }
 $id = session_id();
-#echo "<br>Session id = $id <br>";
 
 $shows_query = "SELECT * FROM shows";
 $shows_result = $db->query($shows_query);
 $shows_num = $shows_result->num_rows;
 while($row=mysqli_fetch_assoc($shows_result)) {
-				#echo '<pre>'; print_r($row); echo '</pre>'; 
 				$shows_set[$row["showid"]] = $row;
 }
 
@@ -142,9 +139,7 @@ $headers = 'From: f32ee@localhost' . "\r\n" .
                 font-family: Montserrat-SemiBold;
                 font-style: inherit;
                 text-decoration: none;
-                /* font-weight: 550; */
                 font-size: 23px;
-                /* line-height: 28px; */
                 text-align: center;
                 color: #FFFFFF;
             }
