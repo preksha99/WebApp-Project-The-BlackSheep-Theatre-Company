@@ -22,7 +22,7 @@ if ($_POST["booking_check"]){
 	if ($login_query_num_results > 0) {
 		$_SESSION['login_email'] = $_POST['email'];
 		$_SESSION['password'] = $password;
-		?><script type="text/javascript">window.location.href='http://192.168.56.2/f32ee/Project/bookings.php'; </script>
+		?><script type="text/javascript">window.location.href='./bookings.php'; </script>
 		<?php
 	} else {
 ?><script type="text/javascript">alert("No account found with the entered email and password!\n" + "Kindly re-enter password or try logging in with another email");</script>

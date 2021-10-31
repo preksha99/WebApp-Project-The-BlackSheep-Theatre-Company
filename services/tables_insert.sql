@@ -3,7 +3,7 @@ use f32ee;
 insert into shows values
   (1, "Hamilton", "Playing", "images/hamilton.png"),
   (2, "Chicago", "Playing", "images/chicago.png"),
-  (3, "The Phantom of the Opera", "Playing", "images/opera.png"),
+  (3, "Phantom of the Opera", "Playing", "images/opera.png"),
   (4, "The Lion King", "Playing", "images/lion_king.png"),
   (5, "Les Miserables", "Playing", "images/les_miserables.png"),
   (6, "Wicked", "Playing", "images/wicked.png");

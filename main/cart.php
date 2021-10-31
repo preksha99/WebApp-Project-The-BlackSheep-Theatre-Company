@@ -78,7 +78,7 @@ if ($_POST["login"]){
 			$order_query_result = $db->query($order_query);
 		}
 
-		?><script type="text/javascript">window.location.href='http://192.168.56.2/f32ee/Project/confirmation.php'; </script>
+		?><script type="text/javascript">window.location.href='./confirmation.php'; </script>
 		<?php
 	} else {
 ?><script type="text/javascript">alert("No account found with the entered email and password!\n" + "Kindly create an account or re-enter password");</script>
@@ -134,7 +134,7 @@ $headers = 'From: f32ee@localhost' . "\r\n" .
     'Reply-To: f32ee@localhost' . "\r\n" .
     'X-Mailer: PHP/' . phpversion();
 mail($to, $subject, $message, $headers,'-ff32ee@localhost');			
-			?><script type="text/javascript">window.location.href='http://192.168.56.2/f32ee/Project/confirmation.php'; </script>
+			?><script type="text/javascript">window.location.href='./confirmation.php'; </script>
 			<?php
 		
 		}
