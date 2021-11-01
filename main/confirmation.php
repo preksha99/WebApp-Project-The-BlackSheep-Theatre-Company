@@ -1,5 +1,5 @@
 <?php 
-
+# Transaction confirmation page
 @ $db = new mysqli('localhost', 'f32ee', 'f32ee', 'f32ee');
 if (mysqli_connect_errno()) {
      echo 'Error: Could not connect to database.  Please try again later.';
@@ -63,7 +63,7 @@ $headers = 'From: f32ee@localhost' . "\r\n" .
           }
           .booking-details {
               width: 1000px;
-              height: 1100px;
+              /*height: 1100px*/;
               background-color: white;
               margin-left: 230px;
               margin-bottom: 40px;
@@ -125,7 +125,7 @@ $headers = 'From: f32ee@localhost' . "\r\n" .
                 padding-top: 10px;
             }
             .confirmation p {
-                font-family: Montserrat-Regular;
+                font-family: Montserrat-SemiBold;
                 font-size: 14px;
             }
             .button {

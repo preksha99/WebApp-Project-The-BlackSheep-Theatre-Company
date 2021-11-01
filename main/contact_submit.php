@@ -1,4 +1,5 @@
 <?php 
+# Contact Submission and Confirmation Page
 $to      = 'f32ee@localhost';
 $subject_cust = 'Thank you for contacting The BlackSheep Theatre Company';
 $subject_admin = 'Admin - New query recieved!';

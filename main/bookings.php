@@ -1,4 +1,5 @@
 <?php
+# User Retrieved bookings
 @ $db = new mysqli('localhost', 'f32ee', 'f32ee', 'f32ee');
 if (mysqli_connect_errno()) {
      echo 'Error: Could not connect to database.  Please try again later.';
@@ -168,7 +169,7 @@ $customer_id = $customer_row["customerid"];
 							$bookings_set[] = $row;
 						}
 						
-						for ($j=0; $j<count($bookings_set); $j++) {
+						for ($j=(count($bookings_set)-1); $j>=0; $j--) {
 							$showid = $bookings_set[$j]["showid"];
 							$scheduleid = $bookings_set[$j]["scheduleid"];
 							
